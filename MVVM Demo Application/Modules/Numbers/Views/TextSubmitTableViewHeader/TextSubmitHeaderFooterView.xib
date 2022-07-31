@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextSubmitHeaderFooterView" customModule="MVVM_Demo_Application" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TextSubmitHeaderFooterView" customModule="MVVM_Demo_Application" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRT-PS-2m6">
+                    <rect key="frame" x="20" y="13" width="42.5" height="34"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Go"/>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Fe-Nr-cwN">
+                    <rect key="frame" x="86.5" y="13" width="307.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6Fe-Nr-cwN" secondAttribute="bottom" constant="8" id="1Rm-hq-r8I"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VRT-PS-2m6" secondAttribute="bottom" constant="8" id="72r-4x-D2h"/>
+                <constraint firstItem="VRT-PS-2m6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Gst-8Z-SWK"/>
+                <constraint firstItem="VRT-PS-2m6" firstAttribute="top" secondItem="6Fe-Nr-cwN" secondAttribute="top" id="Js8-t7-R7a"/>
+                <constraint firstItem="6Fe-Nr-cwN" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="L62-MO-XLr"/>
+                <constraint firstItem="VRT-PS-2m6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="Xcb-B2-1vG"/>
+                <constraint firstItem="VRT-PS-2m6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="YBL-xv-Tcx"/>
+                <constraint firstItem="VRT-PS-2m6" firstAttribute="bottom" secondItem="6Fe-Nr-cwN" secondAttribute="bottom" id="aT7-tx-maW"/>
+                <constraint firstItem="6Fe-Nr-cwN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dKU-b8-X7i"/>
+                <constraint firstItem="6Fe-Nr-cwN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="g5v-Hf-Z1V"/>
+                <constraint firstItem="6Fe-Nr-cwN" firstAttribute="leading" secondItem="VRT-PS-2m6" secondAttribute="trailing" constant="24" id="ksP-Lk-zCG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="submitButton" destination="VRT-PS-2m6" id="geB-Px-M6g"/>
+                <outlet property="textField" destination="6Fe-Nr-cwN" id="3kP-kJ-XfS"/>
+            </connections>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

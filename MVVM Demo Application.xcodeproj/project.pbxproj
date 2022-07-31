@@ -25,6 +25,8 @@
 		D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */; };
 		D0FBA2542896A7CA0081711F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2532896A7CA0081711F /* Reusable.swift */; };
 		D0FBA2582896B2AE0081711F /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2572896B2AE0081711F /* NumberModel.swift */; };
+		D0FBA25B2896B8DE0081711F /* TextSubmitHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA25A2896B8DE0081711F /* TextSubmitHeaderFooterView.swift */; };
+		D0FBA25D2896B90E0081711F /* TextSubmitHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA25C2896B90E0081711F /* TextSubmitHeaderFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
 		D0FBA2532896A7CA0081711F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D0FBA2572896B2AE0081711F /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
+		D0FBA25A2896B8DE0081711F /* TextSubmitHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSubmitHeaderFooterView.swift; sourceTree = "<group>"; };
+		D0FBA25C2896B90E0081711F /* TextSubmitHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextSubmitHeaderFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 		D0FBA24C28969A690081711F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D0FBA2592896B8610081711F /* TextSubmitTableViewHeader */,
 				D0FBA2552896B1EE0081711F /* NumberTableViewCell */,
 			);
 			path = Views;
@@ -197,6 +202,15 @@
 				D0FBA2572896B2AE0081711F /* NumberModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D0FBA2592896B8610081711F /* TextSubmitTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBA25A2896B8DE0081711F /* TextSubmitHeaderFooterView.swift */,
+				D0FBA25C2896B90E0081711F /* TextSubmitHeaderFooterView.xib */,
+			);
+			path = TextSubmitTableViewHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +274,7 @@
 				D0FBA2502896A3230081711F /* NumberTableViewCell.xib in Resources */,
 				D0FBA220289671F30081711F /* LaunchScreen.storyboard in Resources */,
 				D0FBA21D289671F30081711F /* Assets.xcassets in Resources */,
+				D0FBA25D2896B90E0081711F /* TextSubmitHeaderFooterView.xib in Resources */,
 				D0FBA2312896752B0081711F /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +288,7 @@
 			files = (
 				D0FBA2582896B2AE0081711F /* NumberModel.swift in Sources */,
 				D0FBA23728967C390081711F /* StartViewModel.swift in Sources */,
+				D0FBA25B2896B8DE0081711F /* TextSubmitHeaderFooterView.swift in Sources */,
 				D0FBA229289673840081711F /* Coordinator.swift in Sources */,
 				D0FBA24B289698B20081711F /* NumbersTableViewController.swift in Sources */,
 				D0FBA214289671F20081711F /* AppDelegate.swift in Sources */,
