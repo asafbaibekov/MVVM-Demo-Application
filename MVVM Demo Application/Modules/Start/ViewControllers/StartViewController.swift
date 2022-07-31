@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartViewController: UIViewController, Nibbed, ViewModelable {
+class StartViewController: UIViewController, Nibable, ViewModelable {
 
 	var viewModel: StartViewModel!
 
