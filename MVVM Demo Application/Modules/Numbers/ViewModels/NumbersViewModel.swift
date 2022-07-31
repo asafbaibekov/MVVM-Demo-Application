@@ -8,5 +8,12 @@
 import Foundation
 
 class NumbersViewModel: ViewModel {
-	
+
+	func numberOfSections() -> Int {
+		return 1
+	}
+
+	func tableView(numberOfRowsInSection section: Int) -> Int {
+		return 10
+	}
 }

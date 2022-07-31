@@ -28,16 +28,15 @@ private extension NumbersTableViewController {
 
 extension NumbersTableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 0
+		return self.viewModel.numberOfSections()
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 0
+		return self.viewModel.tableView(numberOfRowsInSection: section)
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-		// Configure the cell...
+		let cell = tableView.dequeueReusableCell(withIdentifier: NumberTableViewCell.reuseIdentifier, for: indexPath) as! NumberTableViewCell
 		return cell
 	}
 }
