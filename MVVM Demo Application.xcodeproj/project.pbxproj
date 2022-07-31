@@ -174,10 +174,18 @@
 		D0FBA24C28969A690081711F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D0FBA2552896B1EE0081711F /* NumberTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0FBA2552896B1EE0081711F /* NumberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */,
 				D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */,
 			);
-			path = Views;
+			path = NumberTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
