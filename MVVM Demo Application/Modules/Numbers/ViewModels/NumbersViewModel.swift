@@ -16,4 +16,8 @@ class NumbersViewModel: ViewModel {
 	func tableView(numberOfRowsInSection section: Int) -> Int {
 		return 10
 	}
+
+	func getNumberModel(at indexPath: IndexPath) -> NumberModel {
+		return NumberModel(number: indexPath.row)
+	}
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class NumberTableViewCell: UITableViewCell, Nibable, Reusable {
 
+	var numberModel: NumberModel? { didSet { self.numberLabel.text = String(self.numberModel?.number ?? 0) } }
+
 	@IBOutlet private var numberLabel: UILabel!
 
 	override func awakeFromNib() {

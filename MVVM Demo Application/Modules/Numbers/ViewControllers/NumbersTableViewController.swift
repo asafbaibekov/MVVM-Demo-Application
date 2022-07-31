@@ -37,6 +37,7 @@ extension NumbersTableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: NumberTableViewCell.reuseIdentifier, for: indexPath) as! NumberTableViewCell
+		cell.numberModel = viewModel.getNumberModel(at: indexPath)
 		return cell
 	}
 }
