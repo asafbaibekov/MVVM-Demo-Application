@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="MVVM_Demo_Application" customModuleProvider="target">
             <connections>
+                <outlet property="btnStart" destination="d8a-YY-onf" id="J7w-uE-eJy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +18,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8a-YY-onf">
+                    <rect key="frame" x="145" y="419.5" width="124" height="67"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Start!" cornerStyle="medium">
+                        <backgroundConfiguration key="background">
+                            <color key="backgroundColor" red="0.98431372549019602" green="0.85098039215686272" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="d8a-YY-onf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="MMF-G4-vui"/>
+                <constraint firstItem="d8a-YY-onf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QsQ-JY-jLM"/>
+                <constraint firstItem="d8a-YY-onf" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.075" id="fsl-Hp-7fq"/>
+                <constraint firstItem="d8a-YY-onf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.3" id="ftn-2Z-S4w"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="154"/>
         </view>
     </objects>
