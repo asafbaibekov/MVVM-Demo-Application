@@ -23,6 +23,7 @@
 		D0FBA24F2896A3230081711F /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */; };
 		D0FBA2502896A3230081711F /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */; };
 		D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */; };
+		D0FBA2542896A7CA0081711F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2532896A7CA0081711F /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
 		D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
 		D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
+		D0FBA2532896A7CA0081711F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				D0FBA23C289686730081711F /* ViewModelable.swift */,
 				D0FBA23A289681630081711F /* ViewModel.swift */,
 				D0FBA22C289674160081711F /* Nibable.swift */,
+				D0FBA2532896A7CA0081711F /* Reusable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				D0FBA214289671F20081711F /* AppDelegate.swift in Sources */,
 				D0FBA23D289686730081711F /* ViewModelable.swift in Sources */,
 				D0FBA22D289674160081711F /* Nibable.swift in Sources */,
+				D0FBA2542896A7CA0081711F /* Reusable.swift in Sources */,
 				D0FBA22B289673B20081711F /* MainCoordinator.swift in Sources */,
 				D0FBA216289671F20081711F /* SceneDelegate.swift in Sources */,
 				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
