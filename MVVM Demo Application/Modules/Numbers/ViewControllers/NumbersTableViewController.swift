@@ -14,8 +14,16 @@ class NumbersTableViewController: UITableViewController, ViewModelable {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		setupViews()
 	}
 
+}
+
+
+private extension NumbersTableViewController {
+	func setupViews() {
+		tableView.register(NumberTableViewCell.nib, forCellReuseIdentifier: NumberTableViewCell.reuseIdentifier)
+	}
 }
 
 extension NumbersTableViewController {
