@@ -16,8 +16,13 @@ class MainCoordinator: Coordinator {
 		self.children = [Coordinator]()
 	}
 	func start() {
-		let startViewModel = StartViewModel()
+		let startViewModel = StartViewModel(mainCoordinate: self)
 		let startViewController = StartViewController.instantiate(with: startViewModel)
 		self.navigationController.pushViewController(startViewController, animated: true)
+	}
+	func showNumbersViewController() {
+		let numbersViewModel = NumbersViewModel()
+		let numbersViewController = NumbersTableViewController(viewModel: numbersViewModel)
+		self.navigationController.pushViewController(numbersViewController, animated: true)
 	}
 }

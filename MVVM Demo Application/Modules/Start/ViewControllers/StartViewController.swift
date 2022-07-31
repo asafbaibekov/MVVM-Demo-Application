@@ -16,6 +16,13 @@ class StartViewController: UIViewController, Nibable, ViewModelable {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		setupViews()
 	}
 
+}
+
+private extension StartViewController {
+	func setupViews() {
+		self.btnStart.addTarget(self.viewModel, action: #selector(StartViewModel.startPressed), for: .touchUpInside)
+	}
 }
