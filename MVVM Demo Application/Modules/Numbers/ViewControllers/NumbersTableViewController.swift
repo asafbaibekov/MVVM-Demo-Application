@@ -16,8 +16,9 @@ class NumbersTableViewController: UITableViewController, ViewModelable {
 		// Do any additional setup after loading the view.
 	}
 
-	// MARK: - Table view data source
+}
 
+extension NumbersTableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 0
 	}
@@ -26,12 +27,9 @@ class NumbersTableViewController: UITableViewController, ViewModelable {
 		return 0
 	}
 
-	/*
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 		// Configure the cell...
 		return cell
 	}
-	*/
-
 }
