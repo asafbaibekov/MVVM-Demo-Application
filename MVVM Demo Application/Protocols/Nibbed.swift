@@ -16,3 +16,9 @@ extension Nibbed where Self: UIViewController {
 		return Self(nibName: String(describing: self), bundle: .main)
 	}
 }
+
+extension Nibbed where Self: UIViewController, Self: ViewModelable {
+	static func instantiate(with viewModel: VM) -> Self {
+		return Self(nibName: String(describing: self), bundle: .main, viewModel: viewModel)
+	}
+}

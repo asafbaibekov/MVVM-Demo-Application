@@ -17,6 +17,8 @@
 		D0FBA2302896752B0081711F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA22E2896752B0081711F /* StartViewController.swift */; };
 		D0FBA2312896752B0081711F /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA22F2896752B0081711F /* StartViewController.xib */; };
 		D0FBA23728967C390081711F /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23628967C390081711F /* StartViewModel.swift */; };
+		D0FBA23B289681630081711F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23A289681630081711F /* ViewModel.swift */; };
+		D0FBA23D289686730081711F /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23C289686730081711F /* ViewModelable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D0FBA22E2896752B0081711F /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D0FBA22F2896752B0081711F /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		D0FBA23628967C390081711F /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		D0FBA23A289681630081711F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D0FBA23C289686730081711F /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,7 @@
 			children = (
 				D0FBA213289671F20081711F /* AppDelegate.swift */,
 				D0FBA215289671F20081711F /* SceneDelegate.swift */,
-				D0FBA22C289674160081711F /* Nibbed.swift */,
+				D0FBA23E28968AC20081711F /* Protocols */,
 				D0FBA227289673550081711F /* Coordinators */,
 				D0FBA232289675460081711F /* Modules */,
 				D0FBA21C289671F30081711F /* Assets.xcassets */,
@@ -117,6 +121,16 @@
 				D0FBA23628967C390081711F /* StartViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D0FBA23E28968AC20081711F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBA23C289686730081711F /* ViewModelable.swift */,
+				D0FBA23A289681630081711F /* ViewModel.swift */,
+				D0FBA22C289674160081711F /* Nibbed.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +207,11 @@
 				D0FBA23728967C390081711F /* StartViewModel.swift in Sources */,
 				D0FBA229289673840081711F /* Coordinator.swift in Sources */,
 				D0FBA214289671F20081711F /* AppDelegate.swift in Sources */,
+				D0FBA23D289686730081711F /* ViewModelable.swift in Sources */,
 				D0FBA22D289674160081711F /* Nibbed.swift in Sources */,
 				D0FBA22B289673B20081711F /* MainCoordinator.swift in Sources */,
 				D0FBA216289671F20081711F /* SceneDelegate.swift in Sources */,
+				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
