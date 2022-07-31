@@ -7,7 +7,9 @@
 
 import UIKit
 
-class StartViewController: UIViewController, Nibbed {
+class StartViewController: UIViewController, Nibbed, ViewModelable {
+
+	var viewModel: StartViewModel!
 
 	@IBOutlet weak var btnStart: UIButton!
 

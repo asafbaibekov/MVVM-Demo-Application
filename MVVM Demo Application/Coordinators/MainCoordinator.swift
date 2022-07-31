@@ -16,7 +16,8 @@ class MainCoordinator: Coordinator {
 		self.children = [Coordinator]()
 	}
 	func start() {
-		let startViewController = StartViewController.instantiate()
+		let startViewModel = StartViewModel()
+		let startViewController = StartViewController.instantiate(with: startViewModel)
 		self.navigationController.pushViewController(startViewController, animated: true)
 	}
 }

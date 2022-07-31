@@ -7,6 +7,6 @@
 
 import Foundation
 
-class StartViewModel {
+class StartViewModel: ViewModel {
 	
 }
