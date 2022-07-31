@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NumberTableViewCell: UITableViewCell {
+class NumberTableViewCell: UITableViewCell, Nibable, Reusable {
 
 	@IBOutlet private var numberLabel: UILabel!
 
