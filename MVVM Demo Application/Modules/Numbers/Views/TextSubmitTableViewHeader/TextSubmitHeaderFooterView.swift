@@ -36,10 +36,10 @@ extension TextSubmitHeaderFooterView {
 extension TextSubmitHeaderFooterView: UITextFieldDelegate {
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		self.delegate?.onTextChanged(self, shouldChangeCharactersIn: range, replacementString: string)
-		return true;
+		return true
 	}
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder();
-		return true;
+		return true
 	}
 }
