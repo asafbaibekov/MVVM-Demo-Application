@@ -17,15 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-gF-1RK">
-                        <rect key="frame" x="154.5" y="11.5" width="11" height="21"/>
+                        <rect key="frame" x="155" y="12" width="10.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="DYa-gF-1RK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="9jR-m0-hQH"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DYa-gF-1RK" secondAttribute="bottom" constant="8" id="QxF-8n-bpJ"/>
                     <constraint firstItem="DYa-gF-1RK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aDE-Xy-RPk"/>
+                    <constraint firstItem="DYa-gF-1RK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="kAs-Xh-Fyh"/>
                     <constraint firstItem="DYa-gF-1RK" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="mw7-xM-VDZ"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DYa-gF-1RK" secondAttribute="trailing" constant="8" id="vna-AG-umV"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
