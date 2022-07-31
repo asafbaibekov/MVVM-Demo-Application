@@ -24,6 +24,7 @@
 		D0FBA2502896A3230081711F /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */; };
 		D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */; };
 		D0FBA2542896A7CA0081711F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2532896A7CA0081711F /* Reusable.swift */; };
+		D0FBA2582896B2AE0081711F /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2572896B2AE0081711F /* NumberModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
 		D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
 		D0FBA2532896A7CA0081711F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		D0FBA2572896B2AE0081711F /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				D0FBA2402896905A0081711F /* ViewControllers */,
 				D0FBA241289690640081711F /* ViewModels */,
 				D0FBA24C28969A690081711F /* Views */,
+				D0FBA2562896B2960081711F /* Models */,
 			);
 			path = Numbers;
 			sourceTree = "<group>";
@@ -186,6 +189,14 @@
 				D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */,
 			);
 			path = NumberTableViewCell;
+			sourceTree = "<group>";
+		};
+		D0FBA2562896B2960081711F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBA2572896B2AE0081711F /* NumberModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FBA2582896B2AE0081711F /* NumberModel.swift in Sources */,
 				D0FBA23728967C390081711F /* StartViewModel.swift in Sources */,
 				D0FBA229289673840081711F /* Coordinator.swift in Sources */,
 				D0FBA24B289698B20081711F /* NumbersTableViewController.swift in Sources */,
