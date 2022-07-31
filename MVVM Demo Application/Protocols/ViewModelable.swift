@@ -13,6 +13,10 @@ protocol ViewModelable {
 }
 
 extension ViewModelable where Self: UIViewController {
+	init(viewModel: VM) {
+		self.init()
+		self.viewModel = viewModel
+	}
 	init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, viewModel: VM) {
 		self.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 		self.viewModel = viewModel
