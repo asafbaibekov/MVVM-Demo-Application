@@ -19,6 +19,10 @@
 		D0FBA23728967C390081711F /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23628967C390081711F /* StartViewModel.swift */; };
 		D0FBA23B289681630081711F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23A289681630081711F /* ViewModel.swift */; };
 		D0FBA23D289686730081711F /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23C289686730081711F /* ViewModelable.swift */; };
+		D0FBA24B289698B20081711F /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA24A289698B20081711F /* NumbersTableViewController.swift */; };
+		D0FBA24F2896A3230081711F /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */; };
+		D0FBA2502896A3230081711F /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */; };
+		D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		D0FBA23628967C390081711F /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		D0FBA23A289681630081711F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D0FBA23C289686730081711F /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
+		D0FBA24A289698B20081711F /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
+		D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
+		D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
+		D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D0FBA2332896755B0081711F /* Start */,
+				D0FBA23F289690490081711F /* Numbers */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -131,6 +140,41 @@
 				D0FBA22C289674160081711F /* Nibbed.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D0FBA23F289690490081711F /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBA2402896905A0081711F /* ViewControllers */,
+				D0FBA241289690640081711F /* ViewModels */,
+				D0FBA24C28969A690081711F /* Views */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
+		D0FBA2402896905A0081711F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBA24A289698B20081711F /* NumbersTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D0FBA241289690640081711F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D0FBA24C28969A690081711F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */,
+				D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FBA2502896A3230081711F /* NumberTableViewCell.xib in Resources */,
 				D0FBA220289671F30081711F /* LaunchScreen.storyboard in Resources */,
 				D0FBA21D289671F30081711F /* Assets.xcassets in Resources */,
 				D0FBA2312896752B0081711F /* StartViewController.xib in Resources */,
@@ -206,12 +251,15 @@
 			files = (
 				D0FBA23728967C390081711F /* StartViewModel.swift in Sources */,
 				D0FBA229289673840081711F /* Coordinator.swift in Sources */,
+				D0FBA24B289698B20081711F /* NumbersTableViewController.swift in Sources */,
 				D0FBA214289671F20081711F /* AppDelegate.swift in Sources */,
 				D0FBA23D289686730081711F /* ViewModelable.swift in Sources */,
 				D0FBA22D289674160081711F /* Nibbed.swift in Sources */,
 				D0FBA22B289673B20081711F /* MainCoordinator.swift in Sources */,
 				D0FBA216289671F20081711F /* SceneDelegate.swift in Sources */,
 				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
+				D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */,
+				D0FBA24F2896A3230081711F /* NumberTableViewCell.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
