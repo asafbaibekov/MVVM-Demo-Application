@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class StartViewController: UIViewController, Nibable, ViewModelable {
 
 	var viewModel: StartViewModel!
+
+	private var subscribers = Set<AnyCancellable>()
 
 	@IBOutlet weak var btnStart: UIButton!
 
@@ -17,6 +20,7 @@ class StartViewController: UIViewController, Nibable, ViewModelable {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		setupViews()
+		setupCombine()
 	}
 
 }
@@ -24,5 +28,14 @@ class StartViewController: UIViewController, Nibable, ViewModelable {
 private extension StartViewController {
 	func setupViews() {
 		self.btnStart.addTarget(self.viewModel, action: #selector(StartViewModel.startPressed), for: .touchUpInside)
+	}
+
+	func setupCombine() {
+		self.viewModel
+			.numberModelUpdate
+			.sink { [weak self] numberModel in
+				self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
+			}
+			.store(in: &self.subscribers)
 	}
 }

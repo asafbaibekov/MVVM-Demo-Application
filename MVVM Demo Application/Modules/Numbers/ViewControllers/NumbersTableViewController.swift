@@ -73,6 +73,13 @@ extension NumbersTableViewController {
 	
 }
 
+extension NumbersTableViewController {
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let numberTableViewCell = tableView.cellForRow(at: indexPath) as? NumberTableViewCell else { return }
+		self.viewModel.selected(numberModel: numberTableViewCell.numberModel ?? .example)
+	}
+}
+
 extension NumbersTableViewController: TextSubmitHeaderFooterViewDelegate {
 	func onTextChanged(_ textSubmitHeaderFooterView: TextSubmitHeaderFooterView, with text: String) {
 		self.viewModel.textChanged(text: text)

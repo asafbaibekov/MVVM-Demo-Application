@@ -34,6 +34,10 @@ class NumbersViewModel: ViewModel {
 		self.onTextSubmited.send(())
 	}
 
+	func selected(numberModel: NumberModel) {
+		self.mainCoordinate?.popToStart(with: numberModel)
+	}
+
 	func numberOfSections() -> Int {
 		return 1
 	}
