@@ -17,11 +17,20 @@
                     <rect key="frame" x="20" y="13" width="42.5" height="34"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Go"/>
+                    <connections>
+                        <action selector="submitPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="v8Q-aw-Cpp"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Fe-Nr-cwN">
                     <rect key="frame" x="86.5" y="13" width="307.5" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldDidChange:" destination="iN0-l3-epB" eventType="editingChanged" id="XBl-lZ-F7g"/>
+                        <action selector="textFieldDidChange:" destination="iN0-l3-epB" eventType="editingDidBegin" id="lL4-kO-Xc7"/>
+                        <action selector="textFieldDidChange:" destination="iN0-l3-epB" eventType="editingDidEnd" id="rqu-W4-OQG"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="LS5-7J-Ux8"/>
+                    </connections>
                 </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

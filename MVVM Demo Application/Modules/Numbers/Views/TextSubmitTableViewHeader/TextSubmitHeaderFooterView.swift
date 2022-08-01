@@ -9,7 +9,7 @@ import UIKit
 
 protocol TextSubmitHeaderFooterViewDelegate: AnyObject {
 	func onSubmitPressed(_ textSubmitHeaderFooterView: TextSubmitHeaderFooterView, with text: String)
-	func onTextChanged(_ textSubmitHeaderFooterView: TextSubmitHeaderFooterView, shouldChangeCharactersIn range: NSRange, replacementString string: String)
+	func onTextChanged(_ textSubmitHeaderFooterView: TextSubmitHeaderFooterView, with text: String)
 }
 
 class TextSubmitHeaderFooterView: UITableViewHeaderFooterView, Nibable, Reusable {
@@ -18,26 +18,21 @@ class TextSubmitHeaderFooterView: UITableViewHeaderFooterView, Nibable, Reusable
 
 	@IBOutlet private var submitButton: UIButton!
 
-	weak var delegate: TextSubmitHeaderFooterViewDelegate? {
-		didSet {
-			self.textField.delegate = self
-			self.submitButton.addTarget(self, action: #selector(submitPressed), for: .touchUpInside)
-		}
-	}
+	weak var delegate: TextSubmitHeaderFooterViewDelegate?
 
 }
 
 extension TextSubmitHeaderFooterView {
-	@objc func submitPressed() {
-		self.delegate?.onSubmitPressed(self, with: textField?.text ?? "")
+	@IBAction func textFieldDidChange(_ sender: UITextField) {
+		self.delegate?.onTextChanged(self, with: sender.text ?? "")
+	}
+
+	@IBAction func submitPressed(_ sender: UIButton) {
+		self.delegate?.onSubmitPressed(self, with: self.textField.text ?? "")
 	}
 }
 
 extension TextSubmitHeaderFooterView: UITextFieldDelegate {
-	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-		self.delegate?.onTextChanged(self, shouldChangeCharactersIn: range, replacementString: string)
-		return true
-	}
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder();
 		return true
