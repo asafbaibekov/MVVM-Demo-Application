@@ -33,7 +33,7 @@ extension NumbersTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.viewModel.tableView(numberOfRowsInSection: section)
+		return self.viewModel.numberOfRows(in: section)
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

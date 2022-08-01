@@ -13,8 +13,8 @@ class NumbersViewModel: ViewModel {
 		return 1
 	}
 
-	func tableView(numberOfRowsInSection section: Int) -> Int {
-		return 10
+	func numberOfRows(in section: Int) -> Int {
+		return self.numberModels.count
 	}
 
 	func getNumberModel(at indexPath: IndexPath) -> NumberModel {
