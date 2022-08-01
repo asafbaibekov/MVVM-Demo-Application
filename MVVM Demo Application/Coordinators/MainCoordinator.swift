@@ -25,4 +25,9 @@ class MainCoordinator: Coordinator {
 		let numbersViewController = NumbersTableViewController(viewModel: numbersViewModel)
 		self.navigationController.pushViewController(numbersViewController, animated: true)
 	}
+	func popToStart(with numberModel: NumberModel) {
+		guard let startViewController = self.navigationController.viewControllers.first as? StartViewController else { return }
+		startViewController.viewModel.numberModelUpdated(numberModel)
+		self.navigationController.popToRootViewController(animated: true)
+	}
 }
