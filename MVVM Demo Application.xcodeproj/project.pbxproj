@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */; };
 		D0FBA214289671F20081711F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA213289671F20081711F /* AppDelegate.swift */; };
 		D0FBA216289671F20081711F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA215289671F20081711F /* SceneDelegate.swift */; };
 		D0FBA21D289671F30081711F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA21C289671F30081711F /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressAnimationButton.swift; sourceTree = "<group>"; };
 		D0FBA210289671F20081711F /* MVVM Demo Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Demo Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FBA213289671F20081711F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0FBA215289671F20081711F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0B1ECDF2897EBB4003156D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D0FBA207289671F20081711F = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 			children = (
 				D0FBA2342896756F0081711F /* ViewControllers */,
 				D0FBA23528967C240081711F /* ViewModels */,
+				D0B1ECDF2897EBB4003156D6 /* Views */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
 				D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */,
 				D0FBA24F2896A3230081711F /* NumberTableViewCell.swift in Sources */,
+				D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
