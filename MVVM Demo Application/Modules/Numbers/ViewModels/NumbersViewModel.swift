@@ -15,7 +15,10 @@ class NumbersViewModel: ViewModel {
 	@Published var isTextValid: Bool
 	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
 
-	init() {
+	private weak var mainCoordinate: MainCoordinator?
+
+	init(mainCoordinate: MainCoordinator) {
+		self.mainCoordinate = mainCoordinate
 		self.isTextValid = false
 		self.onTextSubmited = PassthroughSubject()
 		self.numberModels = [NumberModel]()

@@ -21,7 +21,7 @@ class MainCoordinator: Coordinator {
 		self.navigationController.pushViewController(startViewController, animated: true)
 	}
 	func showNumbersViewController() {
-		let numbersViewModel = NumbersViewModel()
+		let numbersViewModel = NumbersViewModel(mainCoordinate: self)
 		let numbersViewController = NumbersTableViewController(viewModel: numbersViewModel)
 		self.navigationController.pushViewController(numbersViewController, animated: true)
 	}
