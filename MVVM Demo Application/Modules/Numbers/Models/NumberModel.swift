@@ -9,4 +9,6 @@ import Foundation
 
 struct NumberModel {
 	let number: Int
+
+	static var example: NumberModel { NumberModel(number: 0) }
 }
