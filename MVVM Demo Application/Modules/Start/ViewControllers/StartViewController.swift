@@ -14,9 +14,9 @@ class StartViewController: UIViewController, Nibable, ViewModelable {
 
 	private var subscribers = Set<AnyCancellable>()
 
-	@IBOutlet weak var btnStart: UIButton!
+	@IBOutlet private var btnStart: UIButton!
 
-	@IBOutlet weak var btnDataPassed: PressAnimationButton!
+	@IBOutlet private var btnDataPassed: PressAnimationButton!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
