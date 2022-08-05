@@ -16,6 +16,8 @@ class StartViewController: UIViewController, Nibable, ViewModelable {
 
 	@IBOutlet weak var btnStart: UIButton!
 
+	@IBOutlet weak var btnDataPassed: PressAnimationButton!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
