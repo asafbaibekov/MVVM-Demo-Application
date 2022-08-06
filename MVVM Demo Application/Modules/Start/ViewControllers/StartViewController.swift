@@ -29,6 +29,13 @@ class StartViewController: UIViewController, Nibable, ViewModelable {
 
 private extension StartViewController {
 	func setupViews() {
+		self.view.addGestureRecognizer({
+			let tapGestureRecognizer = UITapGestureRecognizer()
+			tapGestureRecognizer.delegate = self
+			tapGestureRecognizer.numberOfTapsRequired = 6
+			tapGestureRecognizer.addTarget(self.viewModel!, action: #selector(StartViewModel.sixTapsPressed))
+			return tapGestureRecognizer
+		}())
 		self.btnStart.addTarget(self.viewModel, action: #selector(StartViewModel.startPressed), for: .touchUpInside)
 	}
 
@@ -39,5 +46,18 @@ private extension StartViewController {
 				self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
 			}
 			.store(in: &self.subscribers)
+		
+		self.viewModel
+			.colorUpdate
+			.sink(receiveValue: { [weak self] color in
+				self?.view.backgroundColor = color
+			})
+			.store(in: &self.subscribers)
+	}
+}
+
+extension StartViewController: UIGestureRecognizerDelegate {
+	func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+		return touch.view == gestureRecognizer.view
 	}
 }
