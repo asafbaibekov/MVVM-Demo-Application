@@ -12,15 +12,14 @@ class NumbersViewModel: ViewModel {
 
 	private(set) var numberModels: [NumberModel]
 
-	@Published var isTextValid: Bool
+	@Published private(set) var isTextValid: Bool
 	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
+	private(set) var onNumberSelected: PassthroughSubject<NumberModel, Never>
 
-	private weak var mainCoordinate: MainCoordinator?
-
-	init(mainCoordinate: MainCoordinator) {
-		self.mainCoordinate = mainCoordinate
+	init() {
 		self.isTextValid = false
 		self.onTextSubmited = PassthroughSubject()
+		self.onNumberSelected = PassthroughSubject()
 		self.numberModels = [NumberModel]()
 	}
 
@@ -35,7 +34,7 @@ class NumbersViewModel: ViewModel {
 	}
 
 	func selected(numberModel: NumberModel) {
-		self.mainCoordinate?.popToStart(with: numberModel)
+		self.onNumberSelected.send(numberModel)
 	}
 
 	func numberOfSections() -> Int {

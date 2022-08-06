@@ -10,13 +10,12 @@ import Combine
 
 class StartViewModel: ViewModel {
 
-	var numberModelUpdate: PassthroughSubject<NumberModel, Never>
+	private(set) var numberModelUpdate: PassthroughSubject<NumberModel, Never>
+	private(set) var onStartPressed: PassthroughSubject<Void, Never>
 
-	weak private var mainCoordinate: MainCoordinator?
-
-	init(mainCoordinate: MainCoordinator? = nil) {
-		self.mainCoordinate = mainCoordinate
+	init() {
 		self.numberModelUpdate = PassthroughSubject()
+		self.onStartPressed = PassthroughSubject()
 	}
 
 	func numberModelUpdated(_ numberModel: NumberModel) {
@@ -24,7 +23,7 @@ class StartViewModel: ViewModel {
 	}
 
 	@objc func startPressed() {
-		self.mainCoordinate?.showNumbersViewController()
+		self.onStartPressed.send(())
 	}
 
 }
