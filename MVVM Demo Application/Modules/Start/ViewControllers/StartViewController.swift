@@ -44,6 +44,7 @@ private extension StartViewController {
 			.numberModelUpdate
 			.sink { [weak self] numberModel in
 				self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
+				self?.btnDataPassed.isHidden = false
 			}
 			.store(in: &self.subscribers)
 		

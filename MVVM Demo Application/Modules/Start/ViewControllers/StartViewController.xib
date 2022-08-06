@@ -31,7 +31,7 @@
                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGB-n8-Uo1" customClass="PressAnimationButton" customModule="MVVM_Demo_Application" customModuleProvider="target">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGB-n8-Uo1" customClass="PressAnimationButton" customModule="MVVM_Demo_Application" customModuleProvider="target">
                     <rect key="frame" x="103.5" y="780" width="207" height="62"/>
                     <color key="backgroundColor" red="0.71372549019999998" green="0.84313725490000002" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
