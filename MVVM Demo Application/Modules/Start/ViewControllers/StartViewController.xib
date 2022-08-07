@@ -22,6 +22,10 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8a-YY-onf">
                     <rect key="frame" x="145" y="419.5" width="124" height="67"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="NCY-2b-6qh"/>
+                        <constraint firstAttribute="width" secondItem="d8a-YY-onf" secondAttribute="height" multiplier="124:67" id="T50-ME-XSh"/>
+                    </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Start!" cornerStyle="medium">
                         <backgroundConfiguration key="background">
@@ -36,6 +40,7 @@
                     <color key="backgroundColor" red="0.71372549019999998" green="0.84313725490000002" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" secondItem="WGB-n8-Uo1" secondAttribute="width" multiplier="0.3" id="FkB-yf-qZx"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="62" id="rkk-XW-Im4"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Data passed!">
@@ -51,11 +56,9 @@
                 <constraint firstItem="WGB-n8-Uo1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HE6-sS-z8a"/>
                 <constraint firstItem="d8a-YY-onf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="MMF-G4-vui"/>
                 <constraint firstItem="d8a-YY-onf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QsQ-JY-jLM"/>
-                <constraint firstItem="WGB-n8-Uo1" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="dxl-pT-yaH"/>
                 <constraint firstItem="WGB-n8-Uo1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="e4J-Rv-2QL"/>
-                <constraint firstItem="d8a-YY-onf" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.075" id="fsl-Hp-7fq"/>
-                <constraint firstItem="d8a-YY-onf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.3" id="ftn-2Z-S4w"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WGB-n8-Uo1" secondAttribute="trailing" constant="8" id="khY-Ic-b6a"/>
+                <constraint firstItem="WGB-n8-Uo1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="d8a-YY-onf" secondAttribute="bottom" constant="8" id="vF6-rn-VrK"/>
             </constraints>
             <point key="canvasLocation" x="139" y="154"/>
         </view>
