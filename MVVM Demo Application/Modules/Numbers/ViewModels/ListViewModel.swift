@@ -1,5 +1,5 @@
 //
-//  NumbersViewModel.swift
+//  ListViewModel.swift
 //  MVVM Demo Application
 //
 //  Created by Asaf Baibekov on 31/07/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class NumbersViewModel: ViewModel {
+class ListViewModel: ViewModel {
 
 	private(set) var numberModels: [NumberModel]
 

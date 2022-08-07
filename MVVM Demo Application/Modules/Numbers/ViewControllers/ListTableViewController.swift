@@ -1,5 +1,5 @@
 //
-//  NumbersTableViewController.swift
+//  ListTableViewController.swift
 //  MVVM Demo Application
 //
 //  Created by Asaf Baibekov on 31/07/2022.
@@ -8,9 +8,9 @@
 import UIKit
 import Combine
 
-class NumbersTableViewController: UITableViewController, ViewModelable {
+class ListTableViewController: UITableViewController, ViewModelable {
 
-	var viewModel: NumbersViewModel!
+	var viewModel: ListViewModel!
 
 	private var subscribers = Set<AnyCancellable>()
 
@@ -24,10 +24,10 @@ class NumbersTableViewController: UITableViewController, ViewModelable {
 }
 
 
-private extension NumbersTableViewController {
+private extension ListTableViewController {
 	func setupViews() {
 		tableView.register(TextSubmitHeaderFooterView.nib, forHeaderFooterViewReuseIdentifier: TextSubmitHeaderFooterView.reuseIdentifier)
-		tableView.register(NumberTableViewCell.nib, forCellReuseIdentifier: NumberTableViewCell.reuseIdentifier)
+		tableView.register(LabelTableViewCell.nib, forCellReuseIdentifier: LabelTableViewCell.reuseIdentifier)
 	}
 
 	func setupCombine() {
@@ -50,7 +50,7 @@ private extension NumbersTableViewController {
 	}
 }
 
-extension NumbersTableViewController {
+extension ListTableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return self.viewModel.numberOfSections()
 	}
@@ -60,7 +60,7 @@ extension NumbersTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: NumberTableViewCell.reuseIdentifier, for: indexPath) as! NumberTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: LabelTableViewCell.reuseIdentifier, for: indexPath) as! LabelTableViewCell
 		cell.numberModel = viewModel.getNumberModel(at: indexPath)
 		return cell
 	}
@@ -73,14 +73,14 @@ extension NumbersTableViewController {
 	
 }
 
-extension NumbersTableViewController {
+extension ListTableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		guard let numberTableViewCell = tableView.cellForRow(at: indexPath) as? NumberTableViewCell else { return }
-		self.viewModel.selected(numberModel: numberTableViewCell.numberModel ?? .example)
+		guard let textTableViewCell = tableView.cellForRow(at: indexPath) as? LabelTableViewCell else { return }
+		self.viewModel.selected(numberModel: textTableViewCell.numberModel ?? .example)
 	}
 }
 
-extension NumbersTableViewController: TextSubmitHeaderFooterViewDelegate {
+extension ListTableViewController: TextSubmitHeaderFooterViewDelegate {
 	func onTextChanged(_ textSubmitHeaderFooterView: TextSubmitHeaderFooterView, with text: String) {
 		self.viewModel.textChanged(text: text)
 	}

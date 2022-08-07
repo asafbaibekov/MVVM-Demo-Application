@@ -27,10 +27,10 @@
 		D0FBA23728967C390081711F /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23628967C390081711F /* StartViewModel.swift */; };
 		D0FBA23B289681630081711F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23A289681630081711F /* ViewModel.swift */; };
 		D0FBA23D289686730081711F /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA23C289686730081711F /* ViewModelable.swift */; };
-		D0FBA24B289698B20081711F /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA24A289698B20081711F /* NumbersTableViewController.swift */; };
-		D0FBA24F2896A3230081711F /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */; };
-		D0FBA2502896A3230081711F /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */; };
-		D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */; };
+		D0FBA24B289698B20081711F /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA24A289698B20081711F /* ListTableViewController.swift */; };
+		D0FBA24F2896A3230081711F /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA24D2896A3230081711F /* LabelTableViewCell.swift */; };
+		D0FBA2502896A3230081711F /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FBA24E2896A3230081711F /* LabelTableViewCell.xib */; };
+		D0FBA2522896A4CC0081711F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2512896A4CC0081711F /* ListViewModel.swift */; };
 		D0FBA2542896A7CA0081711F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2532896A7CA0081711F /* Reusable.swift */; };
 		D0FBA2582896B2AE0081711F /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA2572896B2AE0081711F /* NumberModel.swift */; };
 		D0FBA25B2896B8DE0081711F /* TextSubmitHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA25A2896B8DE0081711F /* TextSubmitHeaderFooterView.swift */; };
@@ -62,10 +62,10 @@
 		D0FBA23628967C390081711F /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		D0FBA23A289681630081711F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D0FBA23C289686730081711F /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
-		D0FBA24A289698B20081711F /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
-		D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
-		D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
-		D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
+		D0FBA24A289698B20081711F /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		D0FBA24D2896A3230081711F /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		D0FBA24E2896A3230081711F /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
+		D0FBA2512896A4CC0081711F /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D0FBA2532896A7CA0081711F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D0FBA2572896B2AE0081711F /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
 		D0FBA25A2896B8DE0081711F /* TextSubmitHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSubmitHeaderFooterView.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 		D0FBA2402896905A0081711F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D0FBA24A289698B20081711F /* NumbersTableViewController.swift */,
+				D0FBA24A289698B20081711F /* ListTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 		D0FBA241289690640081711F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D0FBA2512896A4CC0081711F /* NumbersViewModel.swift */,
+				D0FBA2512896A4CC0081711F /* ListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -283,18 +283,18 @@
 			isa = PBXGroup;
 			children = (
 				D0FBA2592896B8610081711F /* TextSubmitTableViewHeader */,
-				D0FBA2552896B1EE0081711F /* NumberTableViewCell */,
+				D0FBA2552896B1EE0081711F /* LabelTableViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D0FBA2552896B1EE0081711F /* NumberTableViewCell */ = {
+		D0FBA2552896B1EE0081711F /* LabelTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				D0FBA24D2896A3230081711F /* NumberTableViewCell.swift */,
-				D0FBA24E2896A3230081711F /* NumberTableViewCell.xib */,
+				D0FBA24D2896A3230081711F /* LabelTableViewCell.swift */,
+				D0FBA24E2896A3230081711F /* LabelTableViewCell.xib */,
 			);
-			path = NumberTableViewCell;
+			path = LabelTableViewCell;
 			sourceTree = "<group>";
 		};
 		D0FBA2562896B2960081711F /* Models */ = {
@@ -374,7 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0FBA2502896A3230081711F /* NumberTableViewCell.xib in Resources */,
+				D0FBA2502896A3230081711F /* LabelTableViewCell.xib in Resources */,
 				D0FBA220289671F30081711F /* LaunchScreen.storyboard in Resources */,
 				D0FBA21D289671F30081711F /* Assets.xcassets in Resources */,
 				D0FBA25D2896B90E0081711F /* TextSubmitHeaderFooterView.xib in Resources */,
@@ -438,7 +438,7 @@
 				D0FBA25B2896B8DE0081711F /* TextSubmitHeaderFooterView.swift in Sources */,
 				D02C5510289FAA5400647B7E /* ImagesCollectionViewController.swift in Sources */,
 				D0FBA229289673840081711F /* Coordinator.swift in Sources */,
-				D0FBA24B289698B20081711F /* NumbersTableViewController.swift in Sources */,
+				D0FBA24B289698B20081711F /* ListTableViewController.swift in Sources */,
 				D02C5508289FAA1900647B7E /* ImageCollectionViewCell.swift in Sources */,
 				D0FBA214289671F20081711F /* AppDelegate.swift in Sources */,
 				D0FBA23D289686730081711F /* ViewModelable.swift in Sources */,
@@ -447,8 +447,8 @@
 				D0FBA22B289673B20081711F /* MainCoordinator.swift in Sources */,
 				D0FBA216289671F20081711F /* SceneDelegate.swift in Sources */,
 				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
-				D0FBA2522896A4CC0081711F /* NumbersViewModel.swift in Sources */,
-				D0FBA24F2896A3230081711F /* NumberTableViewCell.swift in Sources */,
+				D0FBA2522896A4CC0081711F /* ListViewModel.swift in Sources */,
+				D0FBA24F2896A3230081711F /* LabelTableViewCell.swift in Sources */,
 				D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
 				D02C550E289FAA5100647B7E /* ImagesViewModel.swift in Sources */,

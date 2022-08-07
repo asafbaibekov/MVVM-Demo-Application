@@ -23,7 +23,7 @@ class MainCoordinator: Coordinator {
 		startViewModel
 			.onStartPressed
 			.sink(receiveValue: { [weak self] in
-				self?.showNumbersViewController()
+				self?.showListTableViewController()
 			})
 			.store(in: &self.subscribers)
 		startViewModel
@@ -35,9 +35,9 @@ class MainCoordinator: Coordinator {
 		let startViewController = StartViewController.instantiate(with: startViewModel)
 		self.navigationController.pushViewController(startViewController, animated: true)
 	}
-	func showNumbersViewController() {
-		let numbersViewModel = NumbersViewModel()
-		numbersViewModel
+	func showListTableViewController() {
+		let listViewModel = ListViewModel()
+		listViewModel
 			.onNumberSelected
 			.sink(receiveValue: { [weak self] numberModel in
 				guard let startViewController = self?.navigationController.viewControllers.first as? StartViewController else { return }
@@ -45,8 +45,8 @@ class MainCoordinator: Coordinator {
 				self?.navigationController.popToRootViewController(animated: true)
 			})
 			.store(in: &self.subscribers)
-		let numbersViewController = NumbersTableViewController(viewModel: numbersViewModel)
-		self.navigationController.pushViewController(numbersViewController, animated: true)
+		let listTableViewController = ListTableViewController(viewModel: listViewModel)
+		self.navigationController.pushViewController(listTableViewController, animated: true)
 	}
 	func showImagesViewController(numberModel: NumberModel) {
 		let imagesViewModel = ImagesViewModel(numberModel: numberModel)
