@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import Combine
 
 class ImagesCollectionViewController: UICollectionViewController, ViewModelable {
 
 	var viewModel: ImagesViewModel!
+
+	private var subscribers = Set<AnyCancellable>()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		setupViews()
 		setupCollectionViewLayout()
+		setupCombine()
 	}
 	
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -30,6 +34,12 @@ class ImagesCollectionViewController: UICollectionViewController, ViewModelable 
 private extension ImagesCollectionViewController {
 	func setupViews() {
 		collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
+		collectionView.addGestureRecognizer({
+			let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(gestureRecognizer:)))
+			longPressGestureRecognizer.minimumPressDuration = 1
+			longPressGestureRecognizer.delaysTouchesBegan = true
+			return longPressGestureRecognizer
+		}())
 	}
 
 	func setupCollectionViewLayout() {
@@ -48,6 +58,20 @@ private extension ImagesCollectionViewController {
 			}()
 			return layout
 		}(), animated: true)
+	}
+
+	func setupCombine() {
+		self.viewModel
+			.itemDeleted
+			.sink(receiveValue: { [weak self] indexPath in
+				self?.collectionView.deleteItems(at: [indexPath])
+			})
+			.store(in: &self.subscribers)
+	}
+
+	@objc func onLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+		guard gestureRecognizer.state == .began, let indexPath = collectionView.indexPathForItem(at: gestureRecognizer.location(in: collectionView)) else { return }
+		self.viewModel.deleteItem(at: indexPath)
 	}
 }
 

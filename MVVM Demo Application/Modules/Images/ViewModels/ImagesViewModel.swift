@@ -6,15 +6,18 @@
 //
 
 import Foundation
+import Combine
 
 class ImagesViewModel: ViewModel {
 
 	private(set) var numberModel: NumberModel
 	private(set) var imageModels: [ImageModel]
+	private(set) var itemDeleted: PassthroughSubject<IndexPath, Never>
 
 	init(numberModel: NumberModel) {
 		self.numberModel = numberModel
 		self.imageModels = (0...numberModel.number).map({ _ in ImageModel.example })
+		self.itemDeleted = PassthroughSubject()
 	}
 
 	func numberOfSections() -> Int {
@@ -27,6 +30,11 @@ class ImagesViewModel: ViewModel {
 
 	func getImageModel(at indexPath: IndexPath) -> ImageModel {
 		return self.imageModels[indexPath.item]
+	}
+
+	func deleteItem(at indexPath: IndexPath) {
+		self.imageModels.remove(at: indexPath.item)
+		self.itemDeleted.send(indexPath)
 	}
 
 }
