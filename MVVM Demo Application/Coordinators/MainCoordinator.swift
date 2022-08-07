@@ -36,7 +36,7 @@ class MainCoordinator: Coordinator {
 		self.navigationController.pushViewController(startViewController, animated: true)
 	}
 	func showListTableViewController() {
-		let listViewModel = ListViewModel()
+		let listViewModel = ListViewModel(listType: .numbers)
 		listViewModel
 			.onNumberSelected
 			.sink(receiveValue: { [weak self] numberModel in

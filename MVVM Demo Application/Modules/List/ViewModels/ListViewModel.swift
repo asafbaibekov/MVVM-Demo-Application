@@ -10,13 +10,16 @@ import Combine
 
 class ListViewModel: ViewModel {
 
+	private let listType: ListType
+
 	private(set) var models: [Model]
 
 	@Published private(set) var isTextValid: Bool
 	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
 	private(set) var onNumberSelected: PassthroughSubject<NumberModel, Never>
 
-	init() {
+	init(listType: ListType) {
+		self.listType = listType
 		self.isTextValid = false
 		self.onTextSubmited = PassthroughSubject()
 		self.onNumberSelected = PassthroughSubject()
@@ -24,9 +27,12 @@ class ListViewModel: ViewModel {
 	}
 
 	func textChanged(text: String) {
-		let isTextValid = !text.isEmpty && text.allSatisfy({ $0.isNumber })
-		self.models = isTextValid ? Array(0..<Int(text)!).map(NumberModel.init) : []
-		self.isTextValid = isTextValid
+		switch listType {
+		case .numbers:
+			let isTextValid = !text.isEmpty && text.allSatisfy({ $0.isNumber })
+			self.models = isTextValid ? Array(0..<Int(text)!).map(NumberModel.init) : []
+			self.isTextValid = isTextValid
+		}
 	}
 
 	func submited() {

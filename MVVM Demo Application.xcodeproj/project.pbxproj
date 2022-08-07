@@ -14,6 +14,7 @@
 		D02C550E289FAA5100647B7E /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550D289FAA5100647B7E /* ImagesViewModel.swift */; };
 		D02C5510289FAA5400647B7E /* ImagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */; };
 		D041C89C289FDF850020D728 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041C89B289FDF850020D728 /* Model.swift */; };
+		D041C8A2289FE6340020D728 /* ListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041C8A1289FE6340020D728 /* ListType.swift */; };
 		D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */; };
 		D0B620AC289EFB25005F7E24 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B620AB289EFB25005F7E24 /* UIColorExtension.swift */; };
 		D0FBA214289671F20081711F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA213289671F20081711F /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		D02C550D289FAA5100647B7E /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
 		D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewController.swift; sourceTree = "<group>"; };
 		D041C89B289FDF850020D728 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D041C8A1289FE6340020D728 /* ListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListType.swift; sourceTree = "<group>"; };
 		D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressAnimationButton.swift; sourceTree = "<group>"; };
 		D0B620AB289EFB25005F7E24 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D0FBA210289671F20081711F /* MVVM Demo Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Demo Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,14 @@
 				D02C550D289FAA5100647B7E /* ImagesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D041C8A0289FE6260020D728 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D041C8A1289FE6340020D728 /* ListType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		D0B1ECDF2897EBB4003156D6 /* Views */ = {
@@ -262,6 +272,7 @@
 				D0FBA241289690640081711F /* ViewModels */,
 				D0FBA24C28969A690081711F /* Views */,
 				D0FBA2562896B2960081711F /* Models */,
+				D041C8A0289FE6260020D728 /* Enums */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -452,6 +463,7 @@
 				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
 				D0FBA2522896A4CC0081711F /* ListViewModel.swift in Sources */,
 				D0FBA24F2896A3230081711F /* LabelTableViewCell.swift in Sources */,
+				D041C8A2289FE6340020D728 /* ListType.swift in Sources */,
 				D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
 				D041C89C289FDF850020D728 /* Model.swift in Sources */,
