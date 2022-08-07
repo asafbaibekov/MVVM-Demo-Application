@@ -45,7 +45,7 @@ class ListViewModel: ViewModel {
 		return self.models.count
 	}
 
-	func getNumberModel(at indexPath: IndexPath) -> NumberModel {
-		return NumberModel(number: indexPath.row)
+	func getModel(at indexPath: IndexPath) -> Model? {
+		return self.models[indexPath.row]
 	}
 }
