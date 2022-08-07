@@ -37,12 +37,14 @@ private extension StartViewController {
 			return tapGestureRecognizer
 		}())
 		self.btnStart.addTarget(self.viewModel, action: #selector(StartViewModel.startPressed), for: .touchUpInside)
+		self.btnDataPassed.addTarget(self.viewModel, action: #selector(StartViewModel.dataPassedPressed), for: .touchUpInside)
 	}
 
 	func setupCombine() {
 		self.viewModel
-			.numberModelUpdate
+			.$numberModel
 			.sink { [weak self] numberModel in
+				guard let numberModel = numberModel else { return }
 				self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
 				self?.btnDataPassed.isHidden = false
 			}

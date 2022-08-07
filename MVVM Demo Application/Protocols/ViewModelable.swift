@@ -22,3 +22,10 @@ extension ViewModelable where Self: UIViewController {
 		self.viewModel = viewModel
 	}
 }
+
+extension ViewModelable where Self: UICollectionViewController {
+	init(collectionViewLayout layout: UICollectionViewLayout, viewModel: VM) {
+		self.init(collectionViewLayout: layout)
+		self.viewModel = viewModel
+	}
+}

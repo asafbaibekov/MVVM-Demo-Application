@@ -10,18 +10,25 @@ import Combine
 
 class StartViewModel: ViewModel {
 
-	private(set) var numberModelUpdate: PassthroughSubject<NumberModel, Never>
+	@Published private(set) var numberModel: NumberModel?
+
+	private(set) var onDataPassedPressed: PassthroughSubject<NumberModel, Never>
 	private(set) var onStartPressed: PassthroughSubject<Void, Never>
 	private(set) var colorUpdate: PassthroughSubject<UIColor, Never>
 
 	init() {
-		self.numberModelUpdate = PassthroughSubject()
+		self.onDataPassedPressed = PassthroughSubject()
 		self.onStartPressed = PassthroughSubject()
 		self.colorUpdate = PassthroughSubject()
 	}
 
 	func numberModelUpdated(_ numberModel: NumberModel) {
-		self.numberModelUpdate.send(numberModel)
+		self.numberModel = numberModel
+	}
+
+	@objc func dataPassedPressed() {
+		guard let numberModel = numberModel else { return }
+		self.onDataPassedPressed.send(numberModel)
 	}
 
 	@objc func startPressed() {

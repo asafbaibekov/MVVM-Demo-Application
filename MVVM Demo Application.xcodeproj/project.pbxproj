@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		CBCE08BC467A6F45EF28B95B /* Pods_MVVM_Demo_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221443E0C03A2475FDA28858 /* Pods_MVVM_Demo_Application.framework */; };
+		D02C5508289FAA1900647B7E /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C5506289FAA1900647B7E /* ImageCollectionViewCell.swift */; };
+		D02C5509289FAA1900647B7E /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02C5507289FAA1900647B7E /* ImageCollectionViewCell.xib */; };
+		D02C550C289FAA3500647B7E /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550B289FAA3500647B7E /* ImageModel.swift */; };
+		D02C550E289FAA5100647B7E /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550D289FAA5100647B7E /* ImagesViewModel.swift */; };
+		D02C5510289FAA5400647B7E /* ImagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */; };
 		D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */; };
 		D0B620AC289EFB25005F7E24 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B620AB289EFB25005F7E24 /* UIColorExtension.swift */; };
 		D0FBA214289671F20081711F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FBA213289671F20081711F /* AppDelegate.swift */; };
@@ -36,6 +41,11 @@
 		221443E0C03A2475FDA28858 /* Pods_MVVM_Demo_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Demo_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD7BBB6304B8F2305EA2422 /* Pods-MVVM Demo Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM Demo Application.release.xcconfig"; path = "Target Support Files/Pods-MVVM Demo Application/Pods-MVVM Demo Application.release.xcconfig"; sourceTree = "<group>"; };
 		C0D252630386BEAD44828237 /* Pods-MVVM Demo Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM Demo Application.debug.xcconfig"; path = "Target Support Files/Pods-MVVM Demo Application/Pods-MVVM Demo Application.debug.xcconfig"; sourceTree = "<group>"; };
+		D02C5506289FAA1900647B7E /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		D02C5507289FAA1900647B7E /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		D02C550B289FAA3500647B7E /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		D02C550D289FAA5100647B7E /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
+		D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewController.swift; sourceTree = "<group>"; };
 		D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressAnimationButton.swift; sourceTree = "<group>"; };
 		D0B620AB289EFB25005F7E24 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D0FBA210289671F20081711F /* MVVM Demo Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Demo Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +99,58 @@
 				5DD7BBB6304B8F2305EA2422 /* Pods-MVVM Demo Application.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D02C54FF289FA9C700647B7E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D02C5512289FAA7100647B7E /* ViewControllers */,
+				D02C5513289FAA7A00647B7E /* ViewModels */,
+				D02C5504289FA9F500647B7E /* Views */,
+				D02C550A289FAA2900647B7E /* Models */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D02C5504289FA9F500647B7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D02C5505289FAA0600647B7E /* ImageCollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D02C5505289FAA0600647B7E /* ImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D02C5506289FAA1900647B7E /* ImageCollectionViewCell.swift */,
+				D02C5507289FAA1900647B7E /* ImageCollectionViewCell.xib */,
+			);
+			path = ImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		D02C550A289FAA2900647B7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D02C550B289FAA3500647B7E /* ImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D02C5512289FAA7100647B7E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D02C5513289FAA7A00647B7E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D02C550D289FAA5100647B7E /* ImagesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D0B1ECDF2897EBB4003156D6 /* Views */ = {
@@ -147,6 +209,7 @@
 			children = (
 				D0FBA2332896755B0081711F /* Start */,
 				D0FBA23F289690490081711F /* Numbers */,
+				D02C54FF289FA9C700647B7E /* Images */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -316,6 +379,7 @@
 				D0FBA21D289671F30081711F /* Assets.xcassets in Resources */,
 				D0FBA25D2896B90E0081711F /* TextSubmitHeaderFooterView.xib in Resources */,
 				D0FBA2312896752B0081711F /* StartViewController.xib in Resources */,
+				D02C5509289FAA1900647B7E /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,8 +436,10 @@
 				D0FBA2582896B2AE0081711F /* NumberModel.swift in Sources */,
 				D0FBA23728967C390081711F /* StartViewModel.swift in Sources */,
 				D0FBA25B2896B8DE0081711F /* TextSubmitHeaderFooterView.swift in Sources */,
+				D02C5510289FAA5400647B7E /* ImagesCollectionViewController.swift in Sources */,
 				D0FBA229289673840081711F /* Coordinator.swift in Sources */,
 				D0FBA24B289698B20081711F /* NumbersTableViewController.swift in Sources */,
+				D02C5508289FAA1900647B7E /* ImageCollectionViewCell.swift in Sources */,
 				D0FBA214289671F20081711F /* AppDelegate.swift in Sources */,
 				D0FBA23D289686730081711F /* ViewModelable.swift in Sources */,
 				D0FBA22D289674160081711F /* Nibable.swift in Sources */,
@@ -385,6 +451,8 @@
 				D0FBA24F2896A3230081711F /* NumberTableViewCell.swift in Sources */,
 				D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
+				D02C550E289FAA5100647B7E /* ImagesViewModel.swift in Sources */,
+				D02C550C289FAA3500647B7E /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

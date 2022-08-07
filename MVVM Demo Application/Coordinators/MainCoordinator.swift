@@ -26,6 +26,12 @@ class MainCoordinator: Coordinator {
 				self?.showNumbersViewController()
 			})
 			.store(in: &self.subscribers)
+		startViewModel
+			.onDataPassedPressed
+			.sink(receiveValue: { [weak self] numberModel in
+				self?.showImagesViewController(numberModel: numberModel)
+			})
+			.store(in: &self.subscribers)
 		let startViewController = StartViewController.instantiate(with: startViewModel)
 		self.navigationController.pushViewController(startViewController, animated: true)
 	}
@@ -41,5 +47,10 @@ class MainCoordinator: Coordinator {
 			.store(in: &self.subscribers)
 		let numbersViewController = NumbersTableViewController(viewModel: numbersViewModel)
 		self.navigationController.pushViewController(numbersViewController, animated: true)
+	}
+	func showImagesViewController(numberModel: NumberModel) {
+		let imagesViewModel = ImagesViewModel(numberModel: numberModel)
+		let imagesViewController = ImagesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), viewModel: imagesViewModel)
+		self.navigationController.pushViewController(imagesViewController, animated: true)
 	}
 }
