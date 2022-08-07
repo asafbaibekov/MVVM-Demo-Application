@@ -9,9 +9,9 @@ import UIKit
 
 class LabelTableViewCell: UITableViewCell, Nibable, Reusable {
 
-	var numberModel: NumberModel? { didSet { self.numberLabel.text = String(self.numberModel?.number ?? 0) } }
+	var numberModel: NumberModel? { didSet { self.centeredLabel.text = String(self.numberModel?.number ?? 0) } }
 
-	@IBOutlet private var numberLabel: UILabel!
+	@IBOutlet private var centeredLabel: UILabel!
 
 	override func awakeFromNib() {
 		super.awakeFromNib()

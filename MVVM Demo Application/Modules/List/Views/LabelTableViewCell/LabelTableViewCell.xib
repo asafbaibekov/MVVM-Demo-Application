@@ -34,7 +34,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="numberLabel" destination="DYa-gF-1RK" id="vwR-ux-qk6"/>
+                <outlet property="centeredLabel" destination="DYa-gF-1RK" id="vwR-ux-qk6"/>
             </connections>
             <point key="canvasLocation" x="139" y="139"/>
         </tableViewCell>
