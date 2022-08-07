@@ -10,12 +10,10 @@ import Combine
 
 class ImagesViewModel: ViewModel {
 
-	private(set) var numberModel: NumberModel
 	private(set) var imageModels: [ImageModel]
 	private(set) var itemDeleted: PassthroughSubject<IndexPath, Never>
 
 	init(numberModel: NumberModel) {
-		self.numberModel = numberModel
 		self.imageModels = (0...numberModel.number).map({ _ in ImageModel.example })
 		self.itemDeleted = PassthroughSubject()
 	}
