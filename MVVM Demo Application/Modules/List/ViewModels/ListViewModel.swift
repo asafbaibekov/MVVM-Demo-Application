@@ -10,7 +10,7 @@ import Combine
 
 class ListViewModel: ViewModel {
 
-	private(set) var numberModels: [NumberModel]
+	private(set) var models: [Model]
 
 	@Published private(set) var isTextValid: Bool
 	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
@@ -20,12 +20,12 @@ class ListViewModel: ViewModel {
 		self.isTextValid = false
 		self.onTextSubmited = PassthroughSubject()
 		self.onNumberSelected = PassthroughSubject()
-		self.numberModels = [NumberModel]()
+		self.models = [Model]()
 	}
 
 	func textChanged(text: String) {
 		let isTextValid = !text.isEmpty && text.allSatisfy({ $0.isNumber })
-		self.numberModels = isTextValid ? Array(0..<Int(text)!).map(NumberModel.init) : []
+		self.models = isTextValid ? Array(0..<Int(text)!).map(NumberModel.init) : []
 		self.isTextValid = isTextValid
 	}
 
@@ -42,7 +42,7 @@ class ListViewModel: ViewModel {
 	}
 
 	func numberOfRows(in section: Int) -> Int {
-		return self.numberModels.count
+		return self.models.count
 	}
 
 	func getNumberModel(at indexPath: IndexPath) -> NumberModel {

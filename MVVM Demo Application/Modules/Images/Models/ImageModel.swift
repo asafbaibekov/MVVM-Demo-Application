@@ -8,7 +8,7 @@
 import UIKit
 import EzImageLoader
 
-class ImageModel {
+class ImageModel: Model {
 
 	let imageURL: URL
 	@Published private(set) var image: UIImage?

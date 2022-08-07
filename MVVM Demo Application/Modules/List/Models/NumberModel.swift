@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NumberModel {
+struct NumberModel: Model {
 	let number: Int
 
 	static var example: NumberModel { NumberModel(number: 0) }
