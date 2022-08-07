@@ -1,0 +1,20 @@
+PODS:
+  - EzHTTP (3.6.1)
+  - EzImageLoader (3.5.1):
+    - EzHTTP
+
+DEPENDENCIES:
+  - EzImageLoader
+
+SPEC REPOS:
+  trunk:
+    - EzHTTP
+    - EzImageLoader
+
+SPEC CHECKSUMS:
+  EzHTTP: d8f7e50a69bbcd6ae4f9853692d6bc5cf92e598b
+  EzImageLoader: a930cbd57aaca0dbc3515ad3ff4639843d8658d9
+
+PODFILE CHECKSUM: 6453860c113e39044992b737fcade2d6195a7739
+
+COCOAPODS: 1.11.3
