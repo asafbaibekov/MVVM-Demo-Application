@@ -10,7 +10,7 @@ import Combine
 
 class ListViewModel: ViewModel {
 
-	let numbersService: NumbersService
+	let service: Service
 
 	private var subscribers = Set<AnyCancellable>()
 
@@ -20,8 +20,8 @@ class ListViewModel: ViewModel {
 	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
 	private(set) var onModelSelected: PassthroughSubject<Model, Never>
 
-	init(numbersService: NumbersService) {
-		self.numbersService = numbersService
+	init(service: Service) {
+		self.service = service
 		self.isTextValid = false
 		self.onTextSubmited = PassthroughSubject()
 		self.onModelSelected = PassthroughSubject()
@@ -38,14 +38,16 @@ class ListViewModel: ViewModel {
 
 	func submited(with text: String) {
 		guard isTextValid else { return }
-		self.numbersService
-			.getNumbers(to: Int(text)!)
-			.replaceError(with: [])
-			.sink(receiveValue: { [weak self] numberModels in
-				self?.models = numberModels
-				self?.onTextSubmited.send(())
-			})
-			.store(in: &self.subscribers)
+		if let numbersService = service as? NumbersService {
+			numbersService
+				.getNumbers(to: Int(text)!)
+				.replaceError(with: [])
+				.sink(receiveValue: { [weak self] numberModels in
+					self?.models = numberModels
+					self?.onTextSubmited.send(())
+				})
+				.store(in: &self.subscribers)
+		}
 	}
 
 	func selected(model: Model?) {
