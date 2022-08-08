@@ -13,6 +13,8 @@ class LabelTableViewCell: UITableViewCell, Nibable, Reusable {
 		didSet {
 			if let numberModel = model as? NumberModel {
 				self.centeredLabel.text = String(numberModel.number)
+			} else if let cityModel = model as? CityModel {
+				self.centeredLabel.text = cityModel.settlementName
 			}
 		}
 	}
