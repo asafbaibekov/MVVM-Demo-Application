@@ -10,15 +10,15 @@ import Combine
 
 class ListViewModel: ViewModel {
 
-	let service: Service
+	private let service: Service
 
 	private var subscribers = Set<AnyCancellable>()
 
-	private(set) var models: [Model]
+	private var models: [Model]
 
 	@Published private(set) var isTextValid: Bool
-	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
-	private(set) var onModelSelected: PassthroughSubject<Model, Never>
+	let onTextSubmited: PassthroughSubject<Void, Never>
+	let onModelSelected: PassthroughSubject<Model, Never>
 
 	init(service: Service) {
 		self.service = service

@@ -10,9 +10,9 @@ import Combine
 
 class ImagesViewModel: ViewModel {
 
-	private(set) var imageModels: [ImageModel]
-	private(set) var onItemSelected: PassthroughSubject<Void, Never>
-	private(set) var itemDeleted: PassthroughSubject<IndexPath, Never>
+	private var imageModels: [ImageModel]
+	let onItemSelected: PassthroughSubject<Void, Never>
+	let itemDeleted: PassthroughSubject<IndexPath, Never>
 
 	init(numberModel: NumberModel) {
 		self.imageModels = numberModel.number >= 1 ? (1...numberModel.number).map({ _ in ImageModel.example }) : []

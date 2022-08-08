@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class InternetCitiesService: CitiesService {
-	let url: URL
+	private let url: URL
 
 	init(url: URL) {
 		self.url = url

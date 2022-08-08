@@ -12,9 +12,9 @@ class StartViewModel: ViewModel {
 
 	@Published private(set) var model: Model?
 
-	private(set) var onDataPassedPressed: PassthroughSubject<Model, Never>
-	private(set) var onStartPressed: PassthroughSubject<Void, Never>
-	private(set) var colorUpdate: PassthroughSubject<UIColor, Never>
+	let onDataPassedPressed: PassthroughSubject<Model, Never>
+	let onStartPressed: PassthroughSubject<Void, Never>
+	let colorUpdate: PassthroughSubject<UIColor, Never>
 
 	init() {
 		self.onDataPassedPressed = PassthroughSubject()
