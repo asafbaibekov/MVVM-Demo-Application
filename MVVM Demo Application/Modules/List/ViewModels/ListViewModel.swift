@@ -10,7 +10,9 @@ import Combine
 
 class ListViewModel: ViewModel {
 
-	private let listType: ListType
+	let numbersService: NumbersService
+
+	private var subscribers = Set<AnyCancellable>()
 
 	private(set) var models: [Model]
 
@@ -18,8 +20,8 @@ class ListViewModel: ViewModel {
 	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
 	private(set) var onModelSelected: PassthroughSubject<Model, Never>
 
-	init(listType: ListType) {
-		self.listType = listType
+	init(numbersService: NumbersService) {
+		self.numbersService = numbersService
 		self.isTextValid = false
 		self.onTextSubmited = PassthroughSubject()
 		self.onModelSelected = PassthroughSubject()
@@ -27,16 +29,23 @@ class ListViewModel: ViewModel {
 	}
 
 	func textChanged(text: String) {
-		switch listType {
-		case .numbers:
-			let isTextValid = !text.isEmpty && text.allSatisfy({ $0.isNumber })
-			self.models = isTextValid ? Array(0..<Int(text)!).map(NumberModel.init) : []
-			self.isTextValid = isTextValid
+		let isTextValid = !text.isEmpty && text.allSatisfy({ $0.isNumber })
+		if !isTextValid {
+			self.models = []
 		}
+		self.isTextValid = isTextValid
 	}
 
-	func submited() {
-		self.onTextSubmited.send(())
+	func submited(with text: String) {
+		guard isTextValid else { return }
+		self.numbersService
+			.getNumbers(to: Int(text)!)
+			.replaceError(with: [])
+			.sink(receiveValue: { [weak self] numberModels in
+				self?.models = numberModels
+				self?.onTextSubmited.send(())
+			})
+			.store(in: &self.subscribers)
 	}
 
 	func selected(model: Model?) {

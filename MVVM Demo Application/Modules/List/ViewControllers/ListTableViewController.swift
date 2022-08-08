@@ -86,6 +86,6 @@ extension ListTableViewController: TextSubmitHeaderFooterViewDelegate {
 	}
 	
 	func onSubmitPressed(_ textSubmitHeaderFooterView: TextSubmitHeaderFooterView, with text: String) {
-		self.viewModel.submited()
+		self.viewModel.submited(with: text)
 	}
 }

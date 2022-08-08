@@ -37,7 +37,7 @@ class MainCoordinator: Coordinator {
 		self.navigationController.pushViewController(startViewController, animated: true)
 	}
 	func showListTableViewController() {
-		let listViewModel = ListViewModel(listType: .numbers)
+		let listViewModel = ListViewModel(numbersService: MockNumbersService())
 		listViewModel
 			.onModelSelected
 			.sink(receiveValue: { [weak self] model in
