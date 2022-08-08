@@ -15,6 +15,7 @@
 		D02C5510289FAA5400647B7E /* ImagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */; };
 		D02CB6F128A1067F00CD77BE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CB6F028A1067F00CD77BE /* Service.swift */; };
 		D02CB6F728A1071F00CD77BE /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CB6F628A1071F00CD77BE /* CityModel.swift */; };
+		D02CB6FD28A1079C00CD77BE /* CitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CB6FC28A1079C00CD77BE /* CitiesService.swift */; };
 		D041C89C289FDF850020D728 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041C89B289FDF850020D728 /* Model.swift */; };
 		D041C8A2289FE6340020D728 /* ListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041C8A1289FE6340020D728 /* ListType.swift */; };
 		D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */; };
@@ -52,6 +53,7 @@
 		D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewController.swift; sourceTree = "<group>"; };
 		D02CB6F028A1067F00CD77BE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D02CB6F628A1071F00CD77BE /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		D02CB6FC28A1079C00CD77BE /* CitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesService.swift; sourceTree = "<group>"; };
 		D041C89B289FDF850020D728 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D041C8A1289FE6340020D728 /* ListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListType.swift; sourceTree = "<group>"; };
 		D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressAnimationButton.swift; sourceTree = "<group>"; };
@@ -159,6 +161,22 @@
 				D02C550D289FAA5100647B7E /* ImagesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D02CB6F828A1075900CD77BE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D02CB6FB28A1078300CD77BE /* Cities */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D02CB6FB28A1078300CD77BE /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				D02CB6FC28A1079C00CD77BE /* CitiesService.swift */,
+			);
+			path = Cities;
 			sourceTree = "<group>";
 		};
 		D041C8A0289FE6260020D728 /* Enums */ = {
@@ -277,6 +295,7 @@
 				D0FBA241289690640081711F /* ViewModels */,
 				D0FBA24C28969A690081711F /* Views */,
 				D0FBA2562896B2960081711F /* Models */,
+				D02CB6F828A1075900CD77BE /* Services */,
 				D041C8A0289FE6260020D728 /* Enums */,
 			);
 			path = List;
@@ -466,6 +485,7 @@
 				D0FBA22D289674160081711F /* Nibable.swift in Sources */,
 				D0FBA2542896A7CA0081711F /* Reusable.swift in Sources */,
 				D0FBA22B289673B20081711F /* MainCoordinator.swift in Sources */,
+				D02CB6FD28A1079C00CD77BE /* CitiesService.swift in Sources */,
 				D0FBA216289671F20081711F /* SceneDelegate.swift in Sources */,
 				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
 				D0FBA2522896A4CC0081711F /* ListViewModel.swift in Sources */,
