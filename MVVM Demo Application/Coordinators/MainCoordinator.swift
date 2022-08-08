@@ -23,7 +23,7 @@ class MainCoordinator: Coordinator {
 		startViewModel
 			.onStartPressed
 			.sink(receiveValue: { [weak self] in
-				self?.showListTableViewController()
+				self?.showListTableViewController(with: MockNumbersService())
 			})
 			.store(in: &self.subscribers)
 		startViewModel
@@ -36,8 +36,8 @@ class MainCoordinator: Coordinator {
 		let startViewController = StartViewController.instantiate(with: startViewModel)
 		self.navigationController.pushViewController(startViewController, animated: true)
 	}
-	func showListTableViewController() {
-		let listViewModel = ListViewModel(service: MockNumbersService())
+	func showListTableViewController(with service: Service) {
+		let listViewModel = ListViewModel(service: service)
 		listViewModel
 			.onModelSelected
 			.sink(receiveValue: { [weak self] model in
@@ -51,6 +51,13 @@ class MainCoordinator: Coordinator {
 	}
 	func showImagesViewController(numberModel: NumberModel) {
 		let imagesViewModel = ImagesViewModel(numberModel: numberModel)
+		imagesViewModel
+			.onItemSelected
+			.sink(receiveValue: { [weak self] in
+				let url = URL(string: "https://data.gov.il/api/3/action/datastore_search")!
+				self?.showListTableViewController(with: InternetCitiesService(url: url))
+			})
+			.store(in: &self.subscribers)
 		let imagesViewController = ImagesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), viewModel: imagesViewModel)
 		self.navigationController.pushViewController(imagesViewController, animated: true)
 	}

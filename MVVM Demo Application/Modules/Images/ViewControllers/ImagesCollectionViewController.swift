@@ -90,3 +90,9 @@ extension ImagesCollectionViewController {
 		return cell
 	}
 }
+
+extension ImagesCollectionViewController {
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		self.viewModel.itemSelected()
+	}
+}

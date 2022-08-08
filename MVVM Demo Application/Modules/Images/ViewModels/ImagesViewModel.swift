@@ -11,11 +11,13 @@ import Combine
 class ImagesViewModel: ViewModel {
 
 	private(set) var imageModels: [ImageModel]
+	private(set) var onItemSelected: PassthroughSubject<Void, Never>
 	private(set) var itemDeleted: PassthroughSubject<IndexPath, Never>
 
 	init(numberModel: NumberModel) {
 		self.imageModels = (0...numberModel.number).map({ _ in ImageModel.example })
 		self.itemDeleted = PassthroughSubject()
+		self.onItemSelected = PassthroughSubject()
 	}
 
 	func numberOfSections() -> Int {
@@ -35,4 +37,7 @@ class ImagesViewModel: ViewModel {
 		self.itemDeleted.send(indexPath)
 	}
 
+	func itemSelected() {
+		self.onItemSelected.send()
+	}
 }

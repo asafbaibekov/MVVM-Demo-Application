@@ -22,13 +22,14 @@ class ListViewModel: ViewModel {
 
 	init(service: Service) {
 		self.service = service
-		self.isTextValid = false
+		self.isTextValid = !(service is NumbersService)
 		self.onTextSubmited = PassthroughSubject()
 		self.onModelSelected = PassthroughSubject()
 		self.models = [Model]()
 	}
 
 	func textChanged(text: String) {
+		guard service is NumbersService else { return }
 		let isTextValid = !text.isEmpty && text.allSatisfy({ $0.isNumber })
 		if !isTextValid {
 			self.models = []
@@ -44,6 +45,15 @@ class ListViewModel: ViewModel {
 				.replaceError(with: [])
 				.sink(receiveValue: { [weak self] numberModels in
 					self?.models = numberModels
+					self?.onTextSubmited.send(())
+				})
+				.store(in: &self.subscribers)
+		} else if let citiesService = service as? CitiesService {
+			citiesService
+				.getCities(with: text)
+				.replaceError(with: [])
+				.sink(receiveValue: { [weak self] cityModels in
+					self?.models = cityModels
 					self?.onTextSubmited.send(())
 				})
 				.store(in: &self.subscribers)
