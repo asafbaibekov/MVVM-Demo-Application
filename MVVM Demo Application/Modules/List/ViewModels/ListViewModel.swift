@@ -16,13 +16,13 @@ class ListViewModel: ViewModel {
 
 	@Published private(set) var isTextValid: Bool
 	private(set) var onTextSubmited: PassthroughSubject<Void, Never>
-	private(set) var onNumberSelected: PassthroughSubject<NumberModel, Never>
+	private(set) var onModelSelected: PassthroughSubject<Model, Never>
 
 	init(listType: ListType) {
 		self.listType = listType
 		self.isTextValid = false
 		self.onTextSubmited = PassthroughSubject()
-		self.onNumberSelected = PassthroughSubject()
+		self.onModelSelected = PassthroughSubject()
 		self.models = [Model]()
 	}
 
@@ -39,8 +39,9 @@ class ListViewModel: ViewModel {
 		self.onTextSubmited.send(())
 	}
 
-	func selected(numberModel: NumberModel) {
-		self.onNumberSelected.send(numberModel)
+	func selected(model: Model?) {
+		guard let model = model else { return }
+		self.onModelSelected.send(model)
 	}
 
 	func numberOfSections() -> Int {

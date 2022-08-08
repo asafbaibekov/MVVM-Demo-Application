@@ -9,7 +9,13 @@ import UIKit
 
 class LabelTableViewCell: UITableViewCell, Nibable, Reusable {
 
-	var numberModel: NumberModel? { didSet { self.centeredLabel.text = String(self.numberModel?.number ?? 0) } }
+	var model: Model? {
+		didSet {
+			if let numberModel = model as? NumberModel {
+				self.centeredLabel.text = String(numberModel.number)
+			}
+		}
+	}
 
 	@IBOutlet private var centeredLabel: UILabel!
 

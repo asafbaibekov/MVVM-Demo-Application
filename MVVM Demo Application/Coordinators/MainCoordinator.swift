@@ -28,7 +28,8 @@ class MainCoordinator: Coordinator {
 			.store(in: &self.subscribers)
 		startViewModel
 			.onDataPassedPressed
-			.sink(receiveValue: { [weak self] numberModel in
+			.sink(receiveValue: { [weak self] model in
+				guard let numberModel = model as? NumberModel else { return }
 				self?.showImagesViewController(numberModel: numberModel)
 			})
 			.store(in: &self.subscribers)
@@ -38,10 +39,10 @@ class MainCoordinator: Coordinator {
 	func showListTableViewController() {
 		let listViewModel = ListViewModel(listType: .numbers)
 		listViewModel
-			.onNumberSelected
-			.sink(receiveValue: { [weak self] numberModel in
+			.onModelSelected
+			.sink(receiveValue: { [weak self] model in
 				guard let startViewController = self?.navigationController.viewControllers.first as? StartViewController else { return }
-				startViewController.viewModel.numberModelUpdated(numberModel)
+				startViewController.viewModel.modelUpdated(model)
 				self?.navigationController.popToRootViewController(animated: true)
 			})
 			.store(in: &self.subscribers)

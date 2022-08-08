@@ -10,9 +10,9 @@ import Combine
 
 class StartViewModel: ViewModel {
 
-	@Published private(set) var numberModel: NumberModel?
+	@Published private(set) var model: Model?
 
-	private(set) var onDataPassedPressed: PassthroughSubject<NumberModel, Never>
+	private(set) var onDataPassedPressed: PassthroughSubject<Model, Never>
 	private(set) var onStartPressed: PassthroughSubject<Void, Never>
 	private(set) var colorUpdate: PassthroughSubject<UIColor, Never>
 
@@ -22,13 +22,13 @@ class StartViewModel: ViewModel {
 		self.colorUpdate = PassthroughSubject()
 	}
 
-	func numberModelUpdated(_ numberModel: NumberModel) {
-		self.numberModel = numberModel
+	func modelUpdated(_ model: Model) {
+		self.model = model
 	}
 
 	@objc func dataPassedPressed() {
-		guard let numberModel = numberModel else { return }
-		self.onDataPassedPressed.send(numberModel)
+		guard let model = model else { return }
+		self.onDataPassedPressed.send(model)
 	}
 
 	@objc func startPressed() {

@@ -42,9 +42,9 @@ private extension StartViewController {
 
 	func setupCombine() {
 		self.viewModel
-			.$numberModel
-			.sink { [weak self] numberModel in
-				guard let numberModel = numberModel else { return }
+			.$model
+			.sink { [weak self] model in
+				guard let numberModel = model as? NumberModel else { return }
 				self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
 				self?.btnDataPassed.isHidden = false
 			}
