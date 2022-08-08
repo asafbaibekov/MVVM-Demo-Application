@@ -44,9 +44,12 @@ private extension StartViewController {
 		self.viewModel
 			.$model
 			.sink { [weak self] model in
-				guard let numberModel = model as? NumberModel else { return }
-				self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
-				self?.btnDataPassed.isHidden = false
+				if let numberModel = model as? NumberModel {
+					self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
+					self?.btnDataPassed.isHidden = false
+				} else if let cityModel = model as? CityModel {
+					self?.btnDataPassed.setTitle(cityModel.settlementName, for: .normal)
+				}
 			}
 			.store(in: &self.subscribers)
 		
