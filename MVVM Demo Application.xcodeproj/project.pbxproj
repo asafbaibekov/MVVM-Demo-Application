@@ -13,6 +13,7 @@
 		D02C550C289FAA3500647B7E /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550B289FAA3500647B7E /* ImageModel.swift */; };
 		D02C550E289FAA5100647B7E /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550D289FAA5100647B7E /* ImagesViewModel.swift */; };
 		D02C5510289FAA5400647B7E /* ImagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */; };
+		D02CB6F128A1067F00CD77BE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CB6F028A1067F00CD77BE /* Service.swift */; };
 		D041C89C289FDF850020D728 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041C89B289FDF850020D728 /* Model.swift */; };
 		D041C8A2289FE6340020D728 /* ListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041C8A1289FE6340020D728 /* ListType.swift */; };
 		D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */; };
@@ -48,6 +49,7 @@
 		D02C550B289FAA3500647B7E /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		D02C550D289FAA5100647B7E /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
 		D02C550F289FAA5400647B7E /* ImagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewController.swift; sourceTree = "<group>"; };
+		D02CB6F028A1067F00CD77BE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D041C89B289FDF850020D728 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D041C8A1289FE6340020D728 /* ListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListType.swift; sourceTree = "<group>"; };
 		D0B1ECDD2897EBA9003156D6 /* PressAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressAnimationButton.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				D0FBA23C289686730081711F /* ViewModelable.swift */,
 				D0FBA23A289681630081711F /* ViewModel.swift */,
 				D041C89B289FDF850020D728 /* Model.swift */,
+				D02CB6F028A1067F00CD77BE /* Service.swift */,
 				D0FBA22C289674160081711F /* Nibable.swift */,
 				D0FBA2532896A7CA0081711F /* Reusable.swift */,
 			);
@@ -463,6 +466,7 @@
 				D0FBA23B289681630081711F /* ViewModel.swift in Sources */,
 				D0FBA2522896A4CC0081711F /* ListViewModel.swift in Sources */,
 				D0FBA24F2896A3230081711F /* LabelTableViewCell.swift in Sources */,
+				D02CB6F128A1067F00CD77BE /* Service.swift in Sources */,
 				D041C8A2289FE6340020D728 /* ListType.swift in Sources */,
 				D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
