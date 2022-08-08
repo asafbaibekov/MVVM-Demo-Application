@@ -10,7 +10,7 @@ import Combine
 
 class MockNumbersService: NumbersService {
 	func getNumbers(to number: Int) -> AnyPublisher<[NumberModel], Error> {
-		return Just(Array(0..<number).map(NumberModel.init))
+		return Just(Array(0...number).map(NumberModel.init))
 			.setFailureType(to: Error.self)
 			.eraseToAnyPublisher()
 	}

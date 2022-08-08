@@ -15,7 +15,7 @@ class ImagesViewModel: ViewModel {
 	private(set) var itemDeleted: PassthroughSubject<IndexPath, Never>
 
 	init(numberModel: NumberModel) {
-		self.imageModels = (0...numberModel.number).map({ _ in ImageModel.example })
+		self.imageModels = numberModel.number >= 1 ? (1...numberModel.number).map({ _ in ImageModel.example }) : []
 		self.itemDeleted = PassthroughSubject()
 		self.onItemSelected = PassthroughSubject()
 	}
