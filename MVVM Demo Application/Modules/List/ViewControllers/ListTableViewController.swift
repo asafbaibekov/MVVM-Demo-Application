@@ -61,7 +61,7 @@ extension ListTableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: LabelTableViewCell.reuseIdentifier, for: indexPath) as! LabelTableViewCell
-		cell.model = viewModel.getModel(at: indexPath) as? NumberModel
+		cell.model = viewModel.getModel(at: indexPath)
 		return cell
 	}
 
