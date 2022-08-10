@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CBCE08BC467A6F45EF28B95B /* Pods_MVVM_Demo_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221443E0C03A2475FDA28858 /* Pods_MVVM_Demo_Application.framework */; };
+		D0268FD828A3DB4300EC60AE /* ListTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0268FD728A3DB4300EC60AE /* ListTypeEnum.swift */; };
 		D02C5508289FAA1900647B7E /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C5506289FAA1900647B7E /* ImageCollectionViewCell.swift */; };
 		D02C5509289FAA1900647B7E /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02C5507289FAA1900647B7E /* ImageCollectionViewCell.xib */; };
 		D02C550C289FAA3500647B7E /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550B289FAA3500647B7E /* ImageModel.swift */; };
@@ -48,6 +49,7 @@
 		221443E0C03A2475FDA28858 /* Pods_MVVM_Demo_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Demo_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD7BBB6304B8F2305EA2422 /* Pods-MVVM Demo Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM Demo Application.release.xcconfig"; path = "Target Support Files/Pods-MVVM Demo Application/Pods-MVVM Demo Application.release.xcconfig"; sourceTree = "<group>"; };
 		C0D252630386BEAD44828237 /* Pods-MVVM Demo Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM Demo Application.debug.xcconfig"; path = "Target Support Files/Pods-MVVM Demo Application/Pods-MVVM Demo Application.debug.xcconfig"; sourceTree = "<group>"; };
+		D0268FD728A3DB4300EC60AE /* ListTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTypeEnum.swift; sourceTree = "<group>"; };
 		D02C5506289FAA1900647B7E /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		D02C5507289FAA1900647B7E /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		D02C550B289FAA3500647B7E /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 				5DD7BBB6304B8F2305EA2422 /* Pods-MVVM Demo Application.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D0268FD628A3DB3600EC60AE /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				D0268FD728A3DB4300EC60AE /* ListTypeEnum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		D02C54FF289FA9C700647B7E /* Images */ = {
@@ -303,6 +313,7 @@
 				D0FBA24C28969A690081711F /* Views */,
 				D0FBA2562896B2960081711F /* Models */,
 				D02CB6F828A1075900CD77BE /* Services */,
+				D0268FD628A3DB3600EC60AE /* Enum */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -481,6 +492,7 @@
 				D0FBA2582896B2AE0081711F /* NumberModel.swift in Sources */,
 				D0FBA23728967C390081711F /* StartViewModel.swift in Sources */,
 				D0FBA25B2896B8DE0081711F /* TextSubmitHeaderFooterView.swift in Sources */,
+				D0268FD828A3DB4300EC60AE /* ListTypeEnum.swift in Sources */,
 				D02C5510289FAA5400647B7E /* ImagesCollectionViewController.swift in Sources */,
 				D0FBA229289673840081711F /* Coordinator.swift in Sources */,
 				D0FBA24B289698B20081711F /* ListTableViewController.swift in Sources */,
