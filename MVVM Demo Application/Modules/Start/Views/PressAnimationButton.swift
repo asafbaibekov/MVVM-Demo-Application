@@ -95,45 +95,39 @@ class PressAnimationButton: UIButton {
 
 private extension PressAnimationButton {
 	func animateTransform(touches: Touches) {
-		switch touches {
-		case .began:
-			transformAnimation.setValue(Touches.began, forKey: TOUCHES_KEY)
-			transformAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.transform)) as? CATransform3D
-			transformAnimation.toValue = self.model.highlightTransform
-		case .ended:
-			transformAnimation.setValue(Touches.ended, forKey: TOUCHES_KEY)
-			transformAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.transform)) as? CATransform3D
-			transformAnimation.toValue = self.model.normalTransform
-		}
+		transformAnimation.setValue(touches, forKey: TOUCHES_KEY)
 		transformAnimation.duration = model.duration
+		transformAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.transform)) as? CATransform3D
+		transformAnimation.toValue = {
+			switch touches {
+			case .began: return self.model.highlightTransform
+			case .ended: return self.model.normalTransform
+			}
+		}()
 		layer.add(transformAnimation, forKey: transformAnimation.keyPath)
 	}
 	func animateShadowOffset(touches: Touches) {
-		switch touches {
-		case .began:
-			shadowOffsetAnimation.setValue(Touches.began, forKey: TOUCHES_KEY)
-			shadowOffsetAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOffset)) as? CGSize
-			shadowOffsetAnimation.toValue = model.highlightShadowOffset
-		case .ended:
-			shadowOffsetAnimation.setValue(Touches.ended, forKey: TOUCHES_KEY)
-			shadowOffsetAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOffset)) as? CGSize
-			shadowOffsetAnimation.toValue = model.normalShadowOffset
-		}
+		shadowOffsetAnimation.setValue(touches, forKey: TOUCHES_KEY)
 		shadowOffsetAnimation.duration = model.duration
+		shadowOffsetAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOffset)) as? CGSize
+		shadowOffsetAnimation.toValue = {
+			switch touches {
+			case .began: return model.highlightShadowOffset
+			case .ended: return model.normalShadowOffset
+			}
+		}()
 		layer.add(shadowOffsetAnimation, forKey: shadowOffsetAnimation.keyPath)
 	}
 	func animateShadowOpacity(touches: Touches) {
-		switch touches {
-		case .began:
-			shadowOpacityAnimation.setValue(Touches.began, forKey: TOUCHES_KEY)
-			shadowOpacityAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOpacity)) as? Float
-			shadowOpacityAnimation.toValue = model.highlightShadowOpacity
-		case .ended:
-			shadowOpacityAnimation.setValue(Touches.ended, forKey: TOUCHES_KEY)
-			shadowOpacityAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOpacity)) as? Float
-			shadowOpacityAnimation.toValue = model.normalShadowOpacity
-		}
+		shadowOpacityAnimation.setValue(touches, forKey: TOUCHES_KEY)
 		shadowOpacityAnimation.duration = model.duration
+		shadowOpacityAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOpacity)) as? Float
+		shadowOpacityAnimation.toValue = {
+			switch touches {
+			case .began: return model.highlightShadowOpacity
+			case .ended: return model.normalShadowOpacity
+			}
+		}()
 		layer.add(shadowOpacityAnimation, forKey: shadowOpacityAnimation.keyPath)
 	}
 }
