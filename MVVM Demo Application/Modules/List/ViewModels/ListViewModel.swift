@@ -10,7 +10,7 @@ import Combine
 
 class ListViewModel: ViewModel {
 
-	private let service: Service
+	private let listService: ListService
 
 	private var subscribers = Set<AnyCancellable>()
 
@@ -20,16 +20,16 @@ class ListViewModel: ViewModel {
 	let onTextSubmited: PassthroughSubject<Void, Never>
 	let onModelSelected: PassthroughSubject<Model, Never>
 
-	init(service: Service) {
-		self.service = service
-		self.isTextValid = !(service is NumbersService)
+	init(with listService: ListService) {
+		self.listService = listService
+		self.isTextValid = listService.listType != .numbers
 		self.onTextSubmited = PassthroughSubject()
 		self.onModelSelected = PassthroughSubject()
 		self.models = [Model]()
 	}
 
 	func textChanged(text: String) {
-		guard service is NumbersService else { return }
+		guard listService.listType == .numbers else { return }
 		let isTextValid = !text.isEmpty && text.allSatisfy({ $0.isNumber })
 		if !isTextValid {
 			self.models = []
@@ -39,8 +39,9 @@ class ListViewModel: ViewModel {
 
 	func submited(with text: String) {
 		guard isTextValid else { return }
-		if let numbersService = service as? NumbersService {
-			numbersService
+		switch listService.listType {
+		case .numbers:
+			listService
 				.getNumbers(to: Int(text)!)
 				.replaceError(with: [])
 				.sink(receiveValue: { [weak self] numberModels in
@@ -48,8 +49,8 @@ class ListViewModel: ViewModel {
 					self?.onTextSubmited.send(())
 				})
 				.store(in: &self.subscribers)
-		} else if let citiesService = service as? CitiesService {
-			citiesService
+		case .cities:
+			listService
 				.getCities(with: text)
 				.replaceError(with: [])
 				.sink(receiveValue: { [weak self] cityModels in

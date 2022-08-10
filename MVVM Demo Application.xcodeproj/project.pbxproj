@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CBCE08BC467A6F45EF28B95B /* Pods_MVVM_Demo_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221443E0C03A2475FDA28858 /* Pods_MVVM_Demo_Application.framework */; };
 		D0268FD828A3DB4300EC60AE /* ListTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0268FD728A3DB4300EC60AE /* ListTypeEnum.swift */; };
+		D0268FDA28A3DB9700EC60AE /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0268FD928A3DB9700EC60AE /* ListService.swift */; };
 		D02C5508289FAA1900647B7E /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C5506289FAA1900647B7E /* ImageCollectionViewCell.swift */; };
 		D02C5509289FAA1900647B7E /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02C5507289FAA1900647B7E /* ImageCollectionViewCell.xib */; };
 		D02C550C289FAA3500647B7E /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C550B289FAA3500647B7E /* ImageModel.swift */; };
@@ -50,6 +51,7 @@
 		5DD7BBB6304B8F2305EA2422 /* Pods-MVVM Demo Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM Demo Application.release.xcconfig"; path = "Target Support Files/Pods-MVVM Demo Application/Pods-MVVM Demo Application.release.xcconfig"; sourceTree = "<group>"; };
 		C0D252630386BEAD44828237 /* Pods-MVVM Demo Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM Demo Application.debug.xcconfig"; path = "Target Support Files/Pods-MVVM Demo Application/Pods-MVVM Demo Application.debug.xcconfig"; sourceTree = "<group>"; };
 		D0268FD728A3DB4300EC60AE /* ListTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTypeEnum.swift; sourceTree = "<group>"; };
+		D0268FD928A3DB9700EC60AE /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		D02C5506289FAA1900647B7E /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		D02C5507289FAA1900647B7E /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		D02C550B289FAA3500647B7E /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		D02CB6F828A1075900CD77BE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D0268FD928A3DB9700EC60AE /* ListService.swift */,
 				D02CB70228A1107F00CD77BE /* Numbers */,
 				D02CB6FB28A1078300CD77BE /* Cities */,
 			);
@@ -515,6 +518,7 @@
 				D0B1ECDE2897EBA9003156D6 /* PressAnimationButton.swift in Sources */,
 				D0FBA2302896752B0081711F /* StartViewController.swift in Sources */,
 				D041C89C289FDF850020D728 /* Model.swift in Sources */,
+				D0268FDA28A3DB9700EC60AE /* ListService.swift in Sources */,
 				D02C550E289FAA5100647B7E /* ImagesViewModel.swift in Sources */,
 				D02C550C289FAA3500647B7E /* ImageModel.swift in Sources */,
 			);
