@@ -24,7 +24,7 @@ struct PressAnimationButtonModel {
 			normalShadowOpacity: 0.5,
 			highlightShadowOpacity: 0,
 			normalShadowOffset: CGSize(width: 20, height: 20),
-			highlightShadowOffset: CGSize(width: 10, height: 10),
+			highlightShadowOffset: .zero,
 			normalTransform: CATransform3DIdentity,
 			highlightTransform: CATransform3DMakeTranslation(10, 10, 0),
 			shadowRadius: 1,
@@ -111,7 +111,7 @@ private extension PressAnimationButton {
 		case .began:
 			shadowOffsetAnimation.setValue(Touches.began, forKey: "touches")
 			shadowOffsetAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOffset)) as? CGSize
-			shadowOffsetAnimation.toValue = CGSize.zero
+			shadowOffsetAnimation.toValue = model.highlightShadowOffset
 		case .ended:
 			shadowOffsetAnimation.setValue(Touches.ended, forKey: "touches")
 			shadowOffsetAnimation.fromValue = layer.presentation()?.value(forKeyPath: #keyPath(CALayer.shadowOffset)) as? CGSize
