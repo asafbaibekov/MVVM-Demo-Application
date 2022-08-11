@@ -179,26 +179,10 @@
 			isa = PBXGroup;
 			children = (
 				D0268FD928A3DB9700EC60AE /* ListService.swift */,
-				D02CB70228A1107F00CD77BE /* Numbers */,
-				D02CB6FB28A1078300CD77BE /* Cities */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		D02CB6FB28A1078300CD77BE /* Cities */ = {
-			isa = PBXGroup;
-			children = (
+				D02CB70328A1108A00CD77BE /* NumbersService.swift */,
 				D02CB6FC28A1079C00CD77BE /* CitiesService.swift */,
 			);
-			path = Cities;
-			sourceTree = "<group>";
-		};
-		D02CB70228A1107F00CD77BE /* Numbers */ = {
-			isa = PBXGroup;
-			children = (
-				D02CB70328A1108A00CD77BE /* NumbersService.swift */,
-			);
-			path = Numbers;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D0B1ECDF2897EBB4003156D6 /* Views */ = {
