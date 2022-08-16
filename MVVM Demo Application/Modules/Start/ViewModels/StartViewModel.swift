@@ -12,14 +12,17 @@ class StartViewModel: ViewModel {
 
 	@Published private(set) var model: Model?
 
-	let onDataPassedPressed: PassthroughSubject<Model, Never>
-	let onStartPressed: PassthroughSubject<Void, Never>
-	let colorUpdate: PassthroughSubject<UIColor, Never>
+	private let onDataPassedPressedSubject: PassthroughSubject<Model, Never>
+	private let onStartPressedSubject: PassthroughSubject<Void, Never>
+	private let colorUpdateSubject: PassthroughSubject<UIColor, Never>
+	lazy var onDataPassedPressed = onDataPassedPressedSubject.eraseToAnyPublisher()
+	lazy var onStartPressed = onStartPressedSubject.eraseToAnyPublisher()
+	lazy var colorUpdate = colorUpdateSubject.eraseToAnyPublisher()
 
 	init() {
-		self.onDataPassedPressed = PassthroughSubject()
-		self.onStartPressed = PassthroughSubject()
-		self.colorUpdate = PassthroughSubject()
+		self.onDataPassedPressedSubject = PassthroughSubject()
+		self.onStartPressedSubject = PassthroughSubject()
+		self.colorUpdateSubject = PassthroughSubject()
 	}
 
 	func modelUpdated(_ model: Model) {
@@ -28,15 +31,15 @@ class StartViewModel: ViewModel {
 
 	@objc func dataPassedPressed() {
 		guard let model = model else { return }
-		self.onDataPassedPressed.send(model)
+		self.onDataPassedPressedSubject.send(model)
 	}
 
 	@objc func startPressed() {
-		self.onStartPressed.send(())
+		self.onStartPressedSubject.send(())
 	}
 
 	@objc func sixTapsPressed() {
-		self.colorUpdate.send(.random)
+		self.colorUpdateSubject.send(.random)
 	}
 
 }

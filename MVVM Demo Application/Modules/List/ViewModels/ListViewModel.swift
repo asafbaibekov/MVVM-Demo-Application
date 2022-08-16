@@ -17,14 +17,16 @@ class ListViewModel: ViewModel {
 	private var models: [Model]
 
 	@Published private(set) var isTextValid: Bool
-	let onTextSubmited: PassthroughSubject<Void, Never>
-	let onModelSelected: PassthroughSubject<Model, Never>
+	private let onTextSubmitedSubject: PassthroughSubject<Void, Never>
+	private let onModelSelectedSubject: PassthroughSubject<Model, Never>
+	lazy var onTextSubmited = onTextSubmitedSubject.eraseToAnyPublisher()
+	lazy var onModelSelected = onModelSelectedSubject.eraseToAnyPublisher()
 
 	init(with listService: ListService) {
 		self.listService = listService
 		self.isTextValid = listService.listType != .numbers
-		self.onTextSubmited = PassthroughSubject()
-		self.onModelSelected = PassthroughSubject()
+		self.onTextSubmitedSubject = PassthroughSubject()
+		self.onModelSelectedSubject = PassthroughSubject()
 		self.models = [Model]()
 	}
 
@@ -46,7 +48,7 @@ class ListViewModel: ViewModel {
 				.replaceError(with: [])
 				.sink(receiveValue: { [weak self] numberModels in
 					self?.models = numberModels
-					self?.onTextSubmited.send(())
+					self?.onTextSubmitedSubject.send(())
 				})
 				.store(in: &self.subscribers)
 		case .cities:
@@ -55,7 +57,7 @@ class ListViewModel: ViewModel {
 				.replaceError(with: [])
 				.sink(receiveValue: { [weak self] cityModels in
 					self?.models = cityModels
-					self?.onTextSubmited.send(())
+					self?.onTextSubmitedSubject.send(())
 				})
 				.store(in: &self.subscribers)
 		}
@@ -63,7 +65,7 @@ class ListViewModel: ViewModel {
 
 	func selected(model: Model?) {
 		guard let model = model else { return }
-		self.onModelSelected.send(model)
+		self.onModelSelectedSubject.send(model)
 	}
 
 	func numberOfSections() -> Int {
