@@ -16,10 +16,8 @@ class ImageCollectionViewCell: UICollectionViewCell, Nibable, Reusable {
 		didSet {
 			imageModel?
 				.$image
-				.sink(receiveValue: { image in
-					guard let image = image else { return }
-					self.imageView.image = image
-				})
+				.compactMap { $0 }
+				.assign(to: \.image, on: self.imageView)
 				.store(in: &self.subscribers)
 		}
 	}

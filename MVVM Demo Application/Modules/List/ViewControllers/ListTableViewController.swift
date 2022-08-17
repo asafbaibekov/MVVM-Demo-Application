@@ -33,19 +33,20 @@ private extension ListTableViewController {
 	func setupCombine() {
 		self.viewModel
 			.$isTextValid
-			.sink(receiveValue: { [weak self] isTextValid in
-				self?.view.backgroundColor = isTextValid ? .white : .red
-				if !isTextValid {
-					self?.tableView.reloadData()
-				}
-			})
+			.map { isTextValid in isTextValid ? UIColor.white : UIColor.red }
+			.assign(to: \.backgroundColor!, on: self.view)
+			.store(in: &self.subscribers)
+
+		self.viewModel
+			.$isTextValid
+			.filter { !$0 }
+			.map { _ in }
+			.sink { [weak self] in self?.tableView.reloadData() }
 			.store(in: &self.subscribers)
 
 		self.viewModel
 			.onTextSubmited
-			.sink { [weak self] in
-				self?.tableView.reloadData()
-			}
+			.sink { [weak self] in self?.tableView.reloadData() }
 			.store(in: &self.subscribers)
 	}
 }

@@ -22,16 +22,13 @@ class MainCoordinator: Coordinator {
 		let startViewModel = StartViewModel()
 		startViewModel
 			.onStartPressed
-			.sink(receiveValue: { [weak self] in
-				self?.showListTableViewController(with: ListService(listType: .numbers))
-			})
+			.map { ListService(listType: .numbers) }
+			.sink { [weak self] listService in self?.showListTableViewController(with: listService) }
 			.store(in: &self.subscribers)
 		startViewModel
 			.onDataPassedPressed
-			.sink(receiveValue: { [weak self] model in
-				guard let numberModel = model as? NumberModel else { return }
-				self?.showImagesViewController(numberModel: numberModel)
-			})
+			.compactMap { $0 as? NumberModel }
+			.sink { [weak self] numberModel in self?.showImagesViewController(with: numberModel) }
 			.store(in: &self.subscribers)
 		let startViewController = StartViewController.instantiate(with: startViewModel)
 		self.navigationController.pushViewController(startViewController, animated: true)
@@ -40,24 +37,27 @@ class MainCoordinator: Coordinator {
 		let listViewModel = ListViewModel(with: listService)
 		listViewModel
 			.onModelSelected
-			.sink(receiveValue: { [weak self] model in
-				guard let startViewController = self?.navigationController.viewControllers.first as? StartViewController else { return }
-				startViewController.viewModel.modelUpdated(model)
-				self?.navigationController.popToRootViewController(animated: true)
-			})
+			.sink { [weak self] model in self?.popToStart(with: model) }
 			.store(in: &self.subscribers)
 		let listTableViewController = ListTableViewController(viewModel: listViewModel)
 		self.navigationController.pushViewController(listTableViewController, animated: true)
 	}
-	func showImagesViewController(numberModel: NumberModel) {
+	func showImagesViewController(with numberModel: NumberModel) {
 		let imagesViewModel = ImagesViewModel(numberModel: numberModel)
 		imagesViewModel
 			.onItemSelected
-			.sink(receiveValue: { [weak self] in
-				self?.showListTableViewController(with: ListService(listType: .cities))
-			})
+			.map { ListService(listType: .cities) }
+			.sink { [weak self] listService in self?.showListTableViewController(with: listService) }
 			.store(in: &self.subscribers)
 		let imagesViewController = ImagesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), viewModel: imagesViewModel)
 		self.navigationController.pushViewController(imagesViewController, animated: true)
+	}
+}
+
+private extension MainCoordinator {
+	func popToStart(with model: Model) {
+		guard let startViewController = self.navigationController.viewControllers.first as? StartViewController else { return }
+		startViewController.viewModel.modelUpdated(model)
+		self.navigationController.popToRootViewController(animated: true)
 	}
 }

@@ -63,9 +63,7 @@ private extension ImagesCollectionViewController {
 	func setupCombine() {
 		self.viewModel
 			.itemDeleted
-			.sink(receiveValue: { [weak self] indexPath in
-				self?.collectionView.deleteItems(at: [indexPath])
-			})
+			.sink { [weak self] indexPath in self?.collectionView.deleteItems(at: [indexPath]) }
 			.store(in: &self.subscribers)
 	}
 

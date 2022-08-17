@@ -43,22 +43,30 @@ private extension StartViewController {
 	func setupCombine() {
 		self.viewModel
 			.$model
-			.sink { [weak self] model in
-				if let numberModel = model as? NumberModel {
-					self?.btnStart.setTitle("\(numberModel.number)", for: .normal)
-					self?.btnDataPassed.isHidden = false
-				} else if let cityModel = model as? CityModel {
-					self?.btnDataPassed.setTitle(cityModel.settlementName, for: .normal)
-				}
-			}
+			.compactMap { $0 as? NumberModel }
+			.sink { [weak self] numberModel in self?.onReceivedNumber(with: numberModel) }
+			.store(in: &self.subscribers)
+		
+		self.viewModel
+			.$model
+			.compactMap { $0 as? CityModel }
+			.sink { [weak self] cityModel in self?.onReceivedCity(with: cityModel) }
 			.store(in: &self.subscribers)
 		
 		self.viewModel
 			.colorUpdate
-			.sink(receiveValue: { [weak self] color in
-				self?.view.backgroundColor = color
-			})
+			.assign(to: \.backgroundColor!, on: self.view)
 			.store(in: &self.subscribers)
+	}
+
+	func onReceivedNumber(with numberModel: NumberModel) {
+		self.btnStart.setTitle("\(numberModel.number)", for: .normal)
+		self.btnDataPassed.isHidden = false
+	}
+
+	func onReceivedCity(with cityModel: CityModel) {
+		self.btnDataPassed.setTitle(cityModel.settlementName, for: .normal)
+		self.btnDataPassed.isHidden = false
 	}
 }
 
